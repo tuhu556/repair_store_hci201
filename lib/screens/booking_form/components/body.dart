@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:repair_app/components/roundedInputField.dart';
 import 'package:repair_app/components/rounded_button.dart';
-import 'package:repair_app/config/constants.dart';
+import 'package:repair_app/contanst/color.dart';
 import 'package:repair_app/screens/home/home_screen.dart';
 
 class Body extends StatelessWidget {
@@ -28,43 +28,42 @@ class Body extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(
-                    child: GestureDetector(
-                      child: Column(
-                        children: [
-                          Image.asset("assets/images/camera.png"),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text("Upload Picture")
-                        ],
-                      ),
-                      onTap: () {
-                        Navigator.pushNamed(
-                          context,
-                          HomeScreen.routeName,
-                        );
-                      },
+                  GestureDetector(
+                    child: Column(
+                      children: [
+                        Image.asset("assets/images/camera.png"),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Text("Upload Picture")
+                      ],
                     ),
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        HomeScreen.routeName,
+                      );
+                    },
                   ),
-                  Expanded(
-                    child: GestureDetector(
-                      child: Column(
-                        children: [
-                          Image.asset("assets/images/video.png"),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text("Upload Video")
-                        ],
-                      ),
-                      onTap: () {
-                        Navigator.pushNamed(
-                          context,
-                          HomeScreen.routeName,
-                        );
-                      },
+                  SizedBox(
+                    width: 10,
+                  ),
+                  GestureDetector(
+                    child: Column(
+                      children: [
+                        Image.asset("assets/images/video.png"),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Text("Upload Video")
+                      ],
                     ),
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        HomeScreen.routeName,
+                      );
+                    },
                   ),
                 ],
               ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:repair_app/components/roundedInputField.dart';
 import 'package:repair_app/components/rounded_button.dart';
-import 'package:repair_app/config/constants.dart';
+import 'package:repair_app/contanst/color.dart';
 import 'package:repair_app/screens/success_vehicle/success_vehicle_screen.dart';
 
 class Body extends StatelessWidget {

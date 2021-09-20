@@ -6,7 +6,7 @@ import 'package:repair_app/components/roundedInputField.dart';
 import 'package:repair_app/components/rounded_button.dart';
 import 'package:repair_app/components/rounded_password_field.dart';
 import 'package:repair_app/components/social_card.dart';
-import 'package:repair_app/config/constants.dart';
+import 'package:repair_app/contanst/color.dart';
 import 'package:repair_app/screens/sign_up/sign_up_screen.dart';
 import 'package:repair_app/screens/success_login/success_login_screen.dart';
 

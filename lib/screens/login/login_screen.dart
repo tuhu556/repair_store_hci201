@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:repair_app/config/constants.dart';
+import 'package:repair_app/contanst/color.dart';
 import 'package:repair_app/screens/login/components/body.dart';
 
 class LoginScreen extends StatelessWidget {

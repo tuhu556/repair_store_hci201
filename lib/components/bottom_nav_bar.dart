@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:repair_app/config/constants.dart';
+import 'package:repair_app/contanst/color.dart';
 import 'package:repair_app/screens/home/home_screen.dart';
 import 'package:repair_app/screens/profile/profile_screen.dart';
 import '../enum.dart';

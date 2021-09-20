@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:keyboard_dismisser/keyboard_dismisser.dart';
 import 'package:repair_app/components/bottom_nav_bar.dart';
 import 'package:repair_app/components/rounded_button.dart';
-import 'package:repair_app/config/constants.dart';
+import 'package:repair_app/contanst/color.dart';
 import 'package:repair_app/helper/helper.dart';
 import 'package:repair_app/screens/add_car/add_car_screen.dart';
 import 'package:repair_app/screens/add_motobike/add_motobike_screen.dart';
