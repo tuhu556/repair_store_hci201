@@ -14,7 +14,7 @@ class RoundedPasswordField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
-      child: TextField(
+      child: TextFormField(
         onChanged: onChanged,
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
@@ -29,6 +29,11 @@ class RoundedPasswordField extends StatelessWidget {
           hintText: hintText,
           border: InputBorder.none,
         ),
+        validator: (value) {
+          if (value!.isEmpty) {
+            return "* Required";
+          }
+        },
       ),
     );
   }

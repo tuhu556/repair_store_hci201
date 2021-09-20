@@ -18,6 +18,7 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    GlobalKey<FormState> _loginKeyForm = GlobalKey();
     return KeyboardDismisser(
       child: SafeArea(
         child: SizedBox(
@@ -40,23 +41,33 @@ class Body extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: size.height * 0.05),
-                RoundedInputField(
-                  hintText: "Your Email",
-                  onChanged: (value) {},
+                Form(
+                  key: _loginKeyForm,
+                  child: Column(
+                    children: [
+                      RoundedInputField(
+                        hintText: "Your Email",
+                        onChanged: (value) {},
+                      ),
+                      RoundedPasswordField(
+                        hintText: "Password",
+                        onChanged: (value) {},
+                      ),
+                    ],
+                  ),
                 ),
-                RoundedPasswordField(
-                  hintText: "Password",
-                  onChanged: (value) {},
-                ),
+
                 RoundedButton(
                   color: AppColors.colorFF8C1A,
                   textColor: Colors.white,
                   text: "LOGIN",
                   press: () {
-                    Navigator.pushNamed(
-                      context,
-                      SuccessLoginScreen.routeName,
-                    );
+                    if (_loginKeyForm.currentState!.validate()) {
+                      Navigator.pushNamed(
+                        context,
+                        SuccessLoginScreen.routeName,
+                      );
+                    }
                   },
                 ),
                 SizedBox(
