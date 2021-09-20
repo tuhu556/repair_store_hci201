@@ -33,8 +33,7 @@ class HomeScreen extends StatelessWidget {
                         height: size.height * 0.05,
                       ),
                       Text(
-                        // "Which of your vehicle's part damaged ?",
-                        'Con cac',
+                        "Which of your vehicle's part damaged ?",
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
