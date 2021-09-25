@@ -37,11 +37,11 @@ class Body extends StatelessWidget {
                 onChanged: (value) {},
               ),
               RoundedInputField(
-                hintText: "Capacity (cm3)",
+                hintText: "Capacity (cm3) (optional)",
                 onChanged: (value) {},
               ),
               RoundedInputField(
-                hintText: "Year of Manufacture",
+                hintText: "Year of Manufacture (optional)",
                 onChanged: (value) {},
               ),
               RoundedButton(

@@ -29,11 +29,6 @@ class RoundedPasswordField extends StatelessWidget {
           hintText: hintText,
           border: InputBorder.none,
         ),
-        validator: (value) {
-          if (value!.isEmpty) {
-            return "* Required";
-          }
-        },
       ),
     );
   }

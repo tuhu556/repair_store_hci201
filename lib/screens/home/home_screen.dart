@@ -16,7 +16,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    GlobalKey<FormState> _searchKeyForm = GlobalKey();
     return Scaffold(
       body: KeyboardDismisser(
         child: SafeArea(
@@ -30,106 +29,15 @@ class HomeScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: size.height * 0.05,
-                      ),
-                      Text(
-                        "Which of your vehicle's part damaged ?",
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Expanded(
-                            child: GestureDetector(
-                              child: Column(
-                                children: [
-                                  Image.asset("assets/images/tire.png"),
-                                  SizedBox(
-                                    height: 8,
-                                  ),
-                                  Text("Tire")
-                                ],
-                              ),
-                              onTap: () {
-                                Navigator.pushNamed(
-                                  context,
-                                  HomeScreen.routeName,
-                                );
-                              },
-                            ),
-                          ),
-                          Expanded(
-                            child: GestureDetector(
-                              child: Column(
-                                children: [
-                                  Image.asset("assets/images/engine.png"),
-                                  SizedBox(
-                                    height: 8,
-                                  ),
-                                  Text("Engine")
-                                ],
-                              ),
-                              onTap: () {
-                                Navigator.pushNamed(
-                                  context,
-                                  HomeScreen.routeName,
-                                );
-                              },
-                            ),
-                          ),
-                          Expanded(
-                            child: GestureDetector(
-                              child: Column(
-                                children: [
-                                  Image.asset("assets/images/key.png"),
-                                  SizedBox(
-                                    height: 8,
-                                  ),
-                                  Text("Key")
-                                ],
-                              ),
-                              onTap: () {
-                                Navigator.pushNamed(
-                                  context,
-                                  HomeScreen.routeName,
-                                );
-                              },
-                            ),
-                          ),
-                          Expanded(
-                            child: GestureDetector(
-                              child: Column(
-                                children: [
-                                  Image.asset("assets/images/otherfix.png"),
-                                  SizedBox(
-                                    height: 8,
-                                  ),
-                                  Text("Brake")
-                                ],
-                              ),
-                              onTap: () {
-                                Navigator.pushNamed(
-                                  context,
-                                  HomeScreen.routeName,
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10,
+                        height: size.height * 0.02,
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: 10),
-                        child: RoundedButton(
-                          color: AppColors.colorFF8C1A,
-                          textColor: Colors.white,
-                          text: "Let's find your fixer",
-                          press: () {
+                        padding: EdgeInsets.symmetric(vertical: 10),
+                        child: GestureDetector(
+                          child: Image(
+                            image: AssetImage("assets/images/find.png"),
+                          ),
+                          onTap: () {
                             Navigator.pushNamed(
                               context,
                               BookingFormScreen.routeName,
@@ -137,13 +45,13 @@ class HomeScreen extends StatelessWidget {
                           },
                         ),
                       ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      Text(
-                        'Add your vehicles information!',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 30),
+                        child: Text(
+                          'Add your vehicles information!',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
                       ),
                       SizedBox(
                         height: 16,
@@ -162,6 +70,9 @@ class HomeScreen extends StatelessWidget {
                           },
                         ),
                       ),
+                      SizedBox(
+                        height: size.height * 0.01,
+                      ),
                       Padding(
                         padding: EdgeInsets.only(right: 10),
                         child: GestureDetector(
@@ -178,7 +89,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 40,
+                        height: size.height * 0.025,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
