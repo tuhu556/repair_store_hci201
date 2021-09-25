@@ -8,7 +8,9 @@ import 'package:repair_app/screens/login/login_screen.dart';
 import 'package:repair_app/screens/profile/profile_screen.dart';
 import 'package:repair_app/screens/sign_in_up/sign_in_up_screen.dart';
 import 'package:repair_app/screens/sign_up/sign_up_screen.dart';
+import 'package:repair_app/screens/spinner_page/spinner_screen.dart';
 import 'package:repair_app/screens/splash/splash_screen.dart';
+import 'package:repair_app/screens/success_find/success_find_screen.dart';
 import 'package:repair_app/screens/success_login/success_login_screen.dart';
 import 'package:repair_app/screens/success_sign_up/success_sign_up_screen.dart';
 import 'package:repair_app/screens/success_vehicle/success_vehicle_screen.dart';
@@ -27,4 +29,6 @@ final Map<String, WidgetBuilder> routes = {
   AddMotoScreen.routeName: (context) => AddMotoScreen(),
   SuccessVehicleScreen.routeName: (context) => SuccessVehicleScreen(),
   BookingFormScreen.routeName: (context) => BookingFormScreen(),
+  SpinnerScreen.routeName: (context) => SpinnerScreen(),
+  SuccessFindScreen.routeName: (context) => SuccessFindScreen(),
 };

@@ -5,7 +5,7 @@ import 'package:repair_app/components/roundedInputField.dart';
 import 'package:repair_app/components/rounded_button.dart';
 import 'package:repair_app/components/rounded_password_field.dart';
 import 'package:repair_app/components/social_card.dart';
-import 'package:repair_app/config/constants.dart';
+import 'package:repair_app/contanst/color.dart';
 import 'package:repair_app/screens/success_sign_up/success_sign_up_screen.dart';
 
 class Body extends StatelessWidget {

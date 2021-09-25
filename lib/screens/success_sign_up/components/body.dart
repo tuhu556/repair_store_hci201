@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:repair_app/components/rounded_button.dart';
-import 'package:repair_app/config/constants.dart';
+import 'package:repair_app/contanst/color.dart';
 import 'package:repair_app/screens/add_vehicles/add_vehicle_screen.dart';
 
 class Body extends StatelessWidget {

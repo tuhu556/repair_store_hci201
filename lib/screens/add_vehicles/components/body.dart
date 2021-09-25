@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:repair_app/components/rounded_button.dart';
-import 'package:repair_app/config/constants.dart';
+import 'package:repair_app/contanst/color.dart';
 import 'package:repair_app/screens/add_car/add_car_screen.dart';
 import 'package:repair_app/screens/add_motobike/add_motobike_screen.dart';
 import 'package:repair_app/screens/home/home_screen.dart';

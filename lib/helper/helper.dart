@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:repair_app/components/dialog_app.dart';
 import 'package:repair_app/components/text_field_input.dart';
-import 'package:repair_app/config/constants.dart';
+import 'package:repair_app/contanst/color.dart';
 
 class Helpers {
   Helpers._();

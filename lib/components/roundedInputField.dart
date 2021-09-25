@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:repair_app/components/text_field_container.dart';
-import 'package:repair_app/config/constants.dart';
+import 'package:repair_app/contanst/color.dart';
 
 class RoundedInputField extends StatelessWidget {
   final String hintText;
@@ -16,7 +16,7 @@ class RoundedInputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
-      child: TextField(
+      child: TextFormField(
         onChanged: onChanged,
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
