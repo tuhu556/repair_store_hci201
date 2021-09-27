@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:keyboard_dismisser/keyboard_dismisser.dart';
 import 'package:repair_app/components/already_have_an_account_acheck.dart';
+import 'package:repair_app/components/no_account_text.dart';
 import 'package:repair_app/components/roundedInputField.dart';
 import 'package:repair_app/components/rounded_button.dart';
 import 'package:repair_app/components/rounded_password_field.dart';
@@ -17,6 +18,7 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool? remember = false;
     Size size = MediaQuery.of(context).size;
     GlobalKey<FormState> _loginKeyForm = GlobalKey();
     return KeyboardDismisser(
@@ -32,9 +34,9 @@ class Body extends StatelessWidget {
                   "assets/icons/repair.svg",
                   height: size.height * 0.15,
                 ),
-                SizedBox(height: size.height * 0.20),
+                SizedBox(height: size.height * 0.10),
                 Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.center,
                   child: Text(
                     "LOGIN",
                     style: TextStyle(
@@ -59,7 +61,29 @@ class Body extends StatelessWidget {
                     ],
                   ),
                 ),
-
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 35),
+                  child: Row(
+                    children: [
+                      Checkbox(
+                        value: remember,
+                        activeColor: kPrimaryColor,
+                        onChanged: (value) {},
+                      ),
+                      Text("Remember me"),
+                      Spacer(),
+                      GestureDetector(
+                        onTap: () => Navigator.pushNamed(
+                            context, SignUpScreen.routeName),
+                        child: Text(
+                          "Forgot Password",
+                          style:
+                              TextStyle(decoration: TextDecoration.underline),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
                 RoundedButton(
                   color: AppColors.colorFF8C1A,
                   textColor: Colors.white,
@@ -76,33 +100,23 @@ class Body extends StatelessWidget {
                 SizedBox(
                   height: size.height * 0.03,
                 ),
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.center,
-                //   children: [
-                //     SocialCard(
-                //       icon: "assets/icons/google-icon.svg",
-                //       press: () {},
-                //     ),
-                //     SocialCard(
-                //       icon: "assets/icons/facebook-2.svg",
-                //       press: () {},
-                //     ),
-                //     SocialCard(
-                //       icon: "assets/icons/twitter.svg",
-                //       press: () {},
-                //     ),
-                //   ],
-                // ),
-                AlreadyHaveAnAccountCheck(press: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return SignUpScreen();
-                      },
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SocialCard(
+                      icon: "assets/icons/google-icon.svg",
+                      press: () {},
                     ),
-                  );
-                })
+                    SocialCard(
+                      icon: "assets/icons/facebook-2.svg",
+                      press: () {},
+                    ),
+                    SocialCard(
+                      icon: "assets/icons/twitter.svg",
+                      press: () {},
+                    ),
+                  ],
+                ),
               ],
             ),
           ),

@@ -9,13 +9,7 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Log in"),
-        backgroundColor: Colors.white,
-        elevation: 0.0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios_new),
-          onPressed: () => Navigator.pop(context),
-          color: Colors.black,
-        ),
+        backgroundColor: AppColors.colorFF8C1A,
       ),
       body: Body(),
     );
