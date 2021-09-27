@@ -33,11 +33,14 @@ class Body extends StatelessWidget {
                   height: size.height * 0.15,
                 ),
                 SizedBox(height: size.height * 0.20),
-                Text(
-                  "LOGIN",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "LOGIN",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
                   ),
                 ),
                 SizedBox(height: size.height * 0.05),
