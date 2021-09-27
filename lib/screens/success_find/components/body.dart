@@ -49,6 +49,20 @@ class Body extends StatelessWidget {
             ),
 
             Positioned(
+              top: 50,
+              left: 10,
+              child: IconButton(
+                icon: Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ),
+
+            Positioned(
               //phần trắng phía dưới
 
               //khoảng cách từ tren của phần màu cam
@@ -189,9 +203,7 @@ class Body extends StatelessWidget {
                         color: AppColors.colorFF8C1A,
                         textColor: Colors.white,
                         text: "Next",
-                        press: () {
-                         
-                        },
+                        press: () {},
                       ),
                     ],
                   ),
