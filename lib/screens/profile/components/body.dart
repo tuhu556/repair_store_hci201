@@ -37,6 +37,7 @@ class Body extends StatelessWidget {
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
             ),
+            SizedBox(height: size.height * 0.03),
             Align(
               alignment: Alignment.center,
               child: RoundedButton(
