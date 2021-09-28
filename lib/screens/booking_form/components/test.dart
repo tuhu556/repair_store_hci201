@@ -47,7 +47,7 @@ class TestAppBar extends StatelessWidget {
                   child: Column(
                     children: [
                       SizedBox(
-                        height: size.height * 0.025,
+                        height: size.height * 0.01,
                       ),
                       // Text(
                       //   "What's your vehicle's problem ?",
@@ -102,14 +102,14 @@ class TestAppBar extends StatelessWidget {
                         height: size.height * 0.05,
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 30),
-                        child: Row(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        child: Stack(
                           children: <Widget>[
-                            Expanded(
+                            Container(
                               child: TextFormField(
                                 decoration: InputDecoration(
                                   border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(25),
+                                    borderRadius: BorderRadius.circular(15),
                                     borderSide: BorderSide.none,
                                   ),
                                   filled: true,
@@ -119,18 +119,21 @@ class TestAppBar extends StatelessWidget {
                                 controller: vehicleSelected,
                               ),
                             ),
-                            PopupMenuButton<String>(
-                              icon: const Icon(Icons.arrow_drop_down),
-                              onSelected: (String value) {
-                                vehicleSelected.text = value;
-                              },
-                              itemBuilder: (BuildContext context) {
-                                return vehicles
-                                    .map<PopupMenuItem<String>>((String value) {
-                                  return new PopupMenuItem(
-                                      child: new Text(value), value: value);
-                                }).toList();
-                              },
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: PopupMenuButton<String>(
+                                icon: const Icon(Icons.arrow_drop_down),
+                                onSelected: (String value) {
+                                  vehicleSelected.text = value;
+                                },
+                                itemBuilder: (BuildContext context) {
+                                  return vehicles
+                                      .map<PopupMenuItem<String>>((String value) {
+                                    return new PopupMenuItem(
+                                        child: new Text(value), value: value);
+                                  }).toList();
+                                },
+                              ),
                             ),
                           ],
                         ),
@@ -139,14 +142,14 @@ class TestAppBar extends StatelessWidget {
                         height: size.height * 0.03,
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 30),
-                        child: Row(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        child: Stack(
                           children: <Widget>[
-                            Expanded(
+                            Container(
                               child: TextFormField(
                                 decoration: InputDecoration(
                                   border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(25),
+                                    borderRadius: BorderRadius.circular(15),
                                     borderSide: BorderSide.none,
                                   ),
                                   filled: true,
@@ -156,18 +159,21 @@ class TestAppBar extends StatelessWidget {
                                 controller: serviceSelected,
                               ),
                             ),
-                            PopupMenuButton<String>(
-                              icon: const Icon(Icons.arrow_drop_down),
-                              onSelected: (String value) {
-                                serviceSelected.text = value;
-                              },
-                              itemBuilder: (BuildContext context) {
-                                return services
-                                    .map<PopupMenuItem<String>>((String value) {
-                                  return new PopupMenuItem(
-                                      child: new Text(value), value: value);
-                                }).toList();
-                              },
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: PopupMenuButton<String>(
+                                icon: const Icon(Icons.arrow_drop_down),
+                                onSelected: (String value) {
+                                  serviceSelected.text = value;
+                                },
+                                itemBuilder: (BuildContext context) {
+                                  return services
+                                      .map<PopupMenuItem<String>>((String value) {
+                                    return new PopupMenuItem(
+                                        child: new Text(value), value: value);
+                                  }).toList();
+                                },
+                              ),
                             ),
                           ],
                         ),
@@ -176,11 +182,11 @@ class TestAppBar extends StatelessWidget {
                         height: size.height * 0.03,
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 35),
+                        padding: EdgeInsets.symmetric(horizontal: 10),
                         child: TextFormField(
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(30),
+                              borderRadius: BorderRadius.circular(15),
                               borderSide: BorderSide.none,
                             ),
                             filled: true,
@@ -195,11 +201,11 @@ class TestAppBar extends StatelessWidget {
                         height: size.height * 0.04,
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 35),
+                        padding: EdgeInsets.symmetric(horizontal: 10),
                         child: TextFormField(
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(30),
+                              borderRadius: BorderRadius.circular(15),
                               borderSide: BorderSide.none,
                             ),
                             filled: true,
@@ -209,6 +215,9 @@ class TestAppBar extends StatelessWidget {
                           onChanged: (value) {},
                           maxLines: 5,
                         ),
+                      ),
+                      SizedBox(
+                        height: size.height * 0.04,
                       ),
                       RoundedButton(
                         color: AppColors.colorFF8C1A,
@@ -220,6 +229,9 @@ class TestAppBar extends StatelessWidget {
                             SpinnerScreen.routeName,
                           );
                         },
+                      ),
+                      SizedBox(
+                        height: size.height * 0.04,
                       ),
                     ],
                   ),
