@@ -33,13 +33,6 @@ final Map<String, WidgetBuilder> routes = {
   BookingFormScreen.routeName: (context) => BookingFormScreen(),
   SpinnerScreen.routeName: (context) => SpinnerScreen(),
   SuccessFindScreen.routeName: (context) => SuccessFindScreen(),
-<<<<<<< Updated upstream
   MapView.routeName: (context) => MapView(),
-=======
-<<<<<<< HEAD
   ForgotPasswordScreen.routeName: (context) => ForgotPasswordScreen(),
-=======
-  MapView.routeName: (context) => MapView(),
->>>>>>> 15d62e6ce1cd45441b2f8f02558617a61ed65af3
->>>>>>> Stashed changes
 };
