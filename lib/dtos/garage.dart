@@ -5,7 +5,7 @@ class Garage {
   final String address;
   final int time;
   final double distance;
-  final int rate;
+  final double rate;
   Garage({
     required this.id,
     required this.name,
@@ -15,5 +15,4 @@ class Garage {
     required this.distance,
     required this.rate,
   });
-  
 }

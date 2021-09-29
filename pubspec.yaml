@@ -32,6 +32,7 @@ dependencies:
   keyboard_dismisser: ^2.0.0
   flutter_spinkit: ^5.1.0
   font_awesome_flutter: ^9.1.0
+  flutter_rating_bar: ^4.0.0
 
   
 dev_dependencies:

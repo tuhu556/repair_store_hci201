@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:keyboard_dismisser/keyboard_dismisser.dart';
 import 'package:repair_app/components/bottom_nav_bar.dart';
@@ -18,8 +19,46 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     List<Garage> garages = [
-      Garage(id: 1, name: "Hoàng Việt", image: "assets/images/garage.png", address: "123 Nguyễn Thị Minh Khai, Q1, HCM", time: 3, distance: 1.1, rate: 5),
-      Garage(id: 2, name: "ABC Garage", image: "assets/images/garage.png", address: "321 Trần Phú, Q2, HCM", time: 10, distance: 2.5, rate: 5),
+      Garage(
+          id: 1,
+          name: "Hoàng Việt",
+          image: "assets/images/garage.png",
+          address: "123 Nguyễn Thị Minh Khai, Q1, HCM",
+          time: 3,
+          distance: 1.1,
+          rate: 5),
+      Garage(
+          id: 2,
+          name: "ABC Garage",
+          image: "assets/images/garage_2.png",
+          address: "113 Trần Hưng Đạo, Q9, HCM",
+          time: 10,
+          distance: 2.5,
+          rate: 4.5),
+      Garage(
+          id: 3,
+          name: "OP Garage",
+          image: "assets/images/garage_3.png",
+          address: "114 Quang Trung, Q12, HCM",
+          time: 10,
+          distance: 2.5,
+          rate: 4),
+      Garage(
+          id: 4,
+          name: "SSS Garage",
+          image: "assets/images/garage_4.png",
+          address: "321 Trần Phú, Q2, HCM",
+          time: 10,
+          distance: 2.5,
+          rate: 3),
+      Garage(
+          id: 5,
+          name: "BBB Garage",
+          image: "assets/images/garage_5.png",
+          address: "321 Trần Phú, Q2, HCM",
+          time: 10,
+          distance: 2.5,
+          rate: 1),
     ];
     return Scaffold(
       body: KeyboardDismisser(
@@ -52,50 +91,57 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                       ),
+                      SizedBox(
+                        height: size.height * 0.03,
+                      ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 10, top: 15),
+                        padding: const EdgeInsets.only(top: 15),
                         child: Text(
                           'Add your vehicles information!',
                           style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold),
                         ),
                       ),
-                      
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 5, top: 15),
-                            child: GestureDetector(
-                              child: Image(
-                                image: AssetImage("assets/images/cars_button_2.png"),
+                        children: <Widget>[
+                          Expanded(
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 5, top: 15),
+                              child: GestureDetector(
+                                child: Image(
+                                  image: AssetImage(
+                                      "assets/images/cars_button_2.png"),
+                                ),
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                    context,
+                                    AddCarScreen.routeName,
+                                  );
+                                },
                               ),
-                              onTap: () {
-                                Navigator.pushNamed(
-                                  context,
-                                  AddCarScreen.routeName,
-                                );
-                              },
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsets.only(right: 5),
-                            child: GestureDetector(
-                              child: Image(
-                                image: AssetImage("assets/images/motobikes_button_2.png"),
+                          Expanded(
+                            child: Padding(
+                              padding: EdgeInsets.only(right: 2),
+                              child: GestureDetector(
+                                child: Image(
+                                  image: AssetImage(
+                                      "assets/images/motobikes_button_2.png"),
+                                ),
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                    context,
+                                    AddMotoScreen.routeName,
+                                  );
+                                },
                               ),
-                              onTap: () {
-                                Navigator.pushNamed(
-                                  context,
-                                  AddMotoScreen.routeName,
-                                );
-                              },
                             ),
                           ),
                         ],
                       ),
                       SizedBox(
-                        height: size.height * 0.03,
+                        height: size.height * 0.05,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -128,10 +174,10 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                       new ListView.builder(
-                          itemBuilder: (_,int index)=>EachList(garages[index]),
-                          itemCount: garages.length,
-                          shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
+                        itemBuilder: (_, int index) => EachList(garages[index]),
+                        itemCount: garages.length,
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
                       ),
                       /* Container(
                         
@@ -241,105 +287,124 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class EachList extends StatelessWidget{
+class EachList extends StatelessWidget {
   final Garage garage;
   EachList(this.garage);
   @override
   Widget build(BuildContext context) {
     return new Container(
       padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-      child: 
-        new Row(
-          children: <Widget>[
-            Container(
-              child: Image.asset('assets/images/garage.png'),
-            ),
-            Expanded(
-              child: Container(
-                margin: const EdgeInsets.only(left: 20.0, top: 5),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      garage.name,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        color: AppColors.color0B0C0C,
-                      ),
+      child: new Row(
+        children: <Widget>[
+          Container(
+            child: Image.asset(garage.image),
+          ),
+          Expanded(
+            child: Container(
+              margin: const EdgeInsets.only(left: 20.0, top: 5),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    garage.name,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: AppColors.color0B0C0C,
                     ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: [
-                        Icon(Icons.location_on, size: 18),
-                        Flexible(
-                          child: Container(
-                            margin: EdgeInsets.only(left: 5.0),
-                            child: Text(
-                              garage.address,
-                              style: TextStyle(
-                                // fontWeight: FontWeight.w400,
-                                fontSize: 12,
-                                color: AppColors.color0B0C0C,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: [
-                        Icon(Icons.access_time, size: 18,),
-                        Container(
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.location_on, size: 18),
+                      Flexible(
+                        child: Container(
                           margin: EdgeInsets.only(left: 5.0),
                           child: Text(
-                            '${garage.time} min - ${garage.distance} km',
+                            garage.address,
                             style: TextStyle(
-                              fontWeight: FontWeight.w400,
+                              // fontWeight: FontWeight.w400,
                               fontSize: 12,
                               color: AppColors.color0B0C0C,
                             ),
                           ),
                         ),
-                      ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.access_time,
+                        size: 18,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 5.0),
+                        child: Text(
+                          '${garage.time} min - ${garage.distance} km',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                            color: AppColors.color0B0C0C,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  RatingBar.builder(
+                    itemSize: 20,
+                    initialRating: garage.rate,
+                    minRating: 1,
+                    direction: Axis.horizontal,
+                    allowHalfRating: true,
+                    itemCount: 5,
+                    itemPadding: EdgeInsets.symmetric(horizontal: 1),
+                    itemBuilder: (context, _) => Icon(
+                      Icons.star,
+                      color: Colors.amber,
                     ),
-                    SizedBox(
-                      height: 2,
-                    ),
-                    Container(
-                      width: 135,
-                      child: TextButton(
-                          style: TextButton.styleFrom(
-                              backgroundColor:
-                                  AppColors.colorFF8C1A,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius:
-                                      BorderRadius.circular(
-                                          30))),
-                          onPressed: () {},
-                          child: Text(
-                            'Book now',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.colorFFFFFF,
-                            ),
-                          )),
-                    )
-                  ],
-                ),
+                    onRatingUpdate: (rating) {
+                      print(rating);
+                    },
+                    ignoreGestures: true,
+                  ),
+                  SizedBox(
+                    height: 2,
+                  ),
+                  Container(
+                    width: 135,
+                    child: TextButton(
+                        style: TextButton.styleFrom(
+                            backgroundColor: AppColors.colorFF8C1A,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30))),
+                        onPressed: () {},
+                        child: Text(
+                          'Book now',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.colorFFFFFF,
+                          ),
+                        )),
+                  )
+                ],
               ),
             ),
-            //new Text(garage.name,style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600),),
-            //new Icon(Icons.navigate_next, color: Colors.black, size: 30.0),
-          ],
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        ),
+          ),
+          //new Text(garage.name,style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600),),
+          //new Icon(Icons.navigate_next, color: Colors.black, size: 30.0),
+        ],
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      ),
     );
   }
 }

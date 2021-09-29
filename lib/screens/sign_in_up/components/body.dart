@@ -34,6 +34,7 @@ class Body extends StatelessWidget {
                   );
                 },
               ),
+              SizedBox(height: size.height * 0.01),
               RoundedButton(
                 color: AppColors.colorECF0F1,
                 textColor: Colors.black,
