@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:repair_app/components/rounded_button.dart';
 import 'package:repair_app/contanst/color.dart';
@@ -19,7 +20,7 @@ class Body extends StatelessWidget {
 
               Container(
                 //hình chữ nhật màu cam phía trên
-                height: MediaQuery.of(context).size.height / 3 + 20,
+                height: MediaQuery.of(context).size.height / 3 + 15,
                 width: MediaQuery.of(context).size.width,
                 child: Stack(
                   fit: StackFit.expand,
@@ -48,21 +49,6 @@ class Body extends StatelessWidget {
                   ),
                 ),
               ),
-
-              Positioned(
-                top: 50,
-                left: 10,
-                child: IconButton(
-                  icon: Icon(
-                    Icons.arrow_back_ios,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-              ),
-
               Positioned(
                 //phần trắng phía dưới
 
@@ -88,7 +74,27 @@ class Body extends StatelessWidget {
 
                       children: <Widget>[
                         SizedBox(
-                          height: 130,
+                          height: 120,
+                        ),
+                        RatingBar.builder(
+                          itemSize: 25,
+                          initialRating: 4.5,
+                          minRating: 1,
+                          direction: Axis.horizontal,
+                          allowHalfRating: true,
+                          itemCount: 5,
+                          itemPadding: EdgeInsets.symmetric(horizontal: 1),
+                          itemBuilder: (context, _) => Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                          ),
+                          onRatingUpdate: (rating) {
+                            print(rating);
+                          },
+                          ignoreGestures: true,
+                        ),
+                        SizedBox(
+                          height: 12,
                         ),
                         Row(
                           children: <Widget>[
@@ -109,7 +115,7 @@ class Body extends StatelessWidget {
                           ],
                         ),
                         SizedBox(
-                          height: 12,
+                          height: 10,
                         ),
                         Row(
                           children: <Widget>[
@@ -129,52 +135,9 @@ class Body extends StatelessWidget {
                         SizedBox(
                           height: 12,
                         ),
-                        Row(
-                          children: <Widget>[
-                            Icon(
-                              Icons.star,
-                              color: Color(0xffFF8573),
-                              size: 15,
-                            ),
-                            SizedBox(
-                              width: 4,
-                            ),
-                            Icon(
-                              Icons.star,
-                              color: Color(0xffFF8573),
-                              size: 15,
-                            ),
-                            SizedBox(
-                              width: 4,
-                            ),
-                            Icon(
-                              Icons.star,
-                              color: Color(0xffFF8573),
-                              size: 15,
-                            ),
-                            SizedBox(
-                              width: 4,
-                            ),
-                            Icon(
-                              Icons.star,
-                              color: Color(0xffFF8573),
-                              size: 15,
-                            ),
-                            SizedBox(
-                              width: 4,
-                            ),
-                            Icon(
-                              Icons.star,
-                              color: Color(0xffFF8573),
-                              size: 15,
-                            ),
-                            SizedBox(
-                              width: 4,
-                            ),
-                          ],
-                        ),
+
                         SizedBox(
-                          height: 17,
+                          height: 10,
                         ),
                         Row(
                           children: <Widget>[
@@ -196,7 +159,7 @@ class Body extends StatelessWidget {
                           width: 300,
                         ),
                         SizedBox(
-                          height: 40,
+                          height: 10,
                         ),
 
                         //Button Next

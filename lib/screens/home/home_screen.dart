@@ -304,7 +304,7 @@ class EachList extends StatelessWidget {
               margin: const EdgeInsets.only(left: 20.0, top: 5),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: <Widget>[
                   Text(
                     garage.name,
                     style: TextStyle(
@@ -359,22 +359,25 @@ class EachList extends StatelessWidget {
                   SizedBox(
                     height: 5,
                   ),
-                  RatingBar.builder(
-                    itemSize: 20,
-                    initialRating: garage.rate,
-                    minRating: 1,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 5,
-                    itemPadding: EdgeInsets.symmetric(horizontal: 1),
-                    itemBuilder: (context, _) => Icon(
-                      Icons.star,
-                      color: Colors.amber,
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: RatingBar.builder(
+                      itemSize: 20,
+                      initialRating: garage.rate,
+                      minRating: 1,
+                      direction: Axis.horizontal,
+                      allowHalfRating: true,
+                      itemCount: 5,
+                      itemPadding: EdgeInsets.symmetric(horizontal: 1),
+                      itemBuilder: (context, _) => Icon(
+                        Icons.star,
+                        color: Colors.amber,
+                      ),
+                      onRatingUpdate: (rating) {
+                        print(rating);
+                      },
+                      ignoreGestures: true,
                     ),
-                    onRatingUpdate: (rating) {
-                      print(rating);
-                    },
-                    ignoreGestures: true,
                   ),
                   SizedBox(
                     height: 2,
