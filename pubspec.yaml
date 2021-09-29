@@ -33,8 +33,10 @@ dependencies:
   flutter_spinkit: ^5.1.0
   font_awesome_flutter: ^9.1.0
   flutter_rating_bar: ^4.0.0
-
-  
+  google_maps_flutter: ^2.0.6
+  geolocator: ^7.0.3
+  geocoding: ^2.0.0
+  flutter_polyline_points: ^0.2.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

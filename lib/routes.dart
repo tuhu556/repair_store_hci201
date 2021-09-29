@@ -5,6 +5,7 @@ import 'package:repair_app/screens/add_vehicles/add_vehicle_screen.dart';
 import 'package:repair_app/screens/booking_form/booking_form_screen.dart';
 import 'package:repair_app/screens/home/home_screen.dart';
 import 'package:repair_app/screens/login/login_screen.dart';
+import 'package:repair_app/screens/order_tracking/tracking_screen.dart';
 import 'package:repair_app/screens/profile/profile_screen.dart';
 import 'package:repair_app/screens/sign_in_up/sign_in_up_screen.dart';
 import 'package:repair_app/screens/sign_up/sign_up_screen.dart';
@@ -31,4 +32,5 @@ final Map<String, WidgetBuilder> routes = {
   BookingFormScreen.routeName: (context) => BookingFormScreen(),
   SpinnerScreen.routeName: (context) => SpinnerScreen(),
   SuccessFindScreen.routeName: (context) => SuccessFindScreen(),
+  MapView.routeName: (context) => MapView(),
 };

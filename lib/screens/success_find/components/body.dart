@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:repair_app/components/rounded_button.dart';
 import 'package:repair_app/contanst/color.dart';
+import 'package:repair_app/screens/order_tracking/tracking_screen.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -204,7 +205,9 @@ class Body extends StatelessWidget {
                           color: AppColors.colorFF8C1A,
                           textColor: Colors.white,
                           text: "Next",
-                          press: () {},
+                          press: () {
+                            Navigator.pushNamed(context, MapView.routeName);
+                          },
                         ),
                       ],
                     ),
