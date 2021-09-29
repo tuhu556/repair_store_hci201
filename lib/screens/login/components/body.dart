@@ -8,6 +8,7 @@ import 'package:repair_app/components/rounded_button.dart';
 import 'package:repair_app/components/rounded_password_field.dart';
 import 'package:repair_app/components/social_card.dart';
 import 'package:repair_app/contanst/color.dart';
+import 'package:repair_app/screens/forgot_password/forgot_password_screen.dart';
 import 'package:repair_app/screens/sign_up/sign_up_screen.dart';
 import 'package:repair_app/screens/success_login/success_login_screen.dart';
 
@@ -74,7 +75,7 @@ class Body extends StatelessWidget {
                       Spacer(),
                       GestureDetector(
                         onTap: () => Navigator.pushNamed(
-                            context, SignUpScreen.routeName),
+                            context, ForgotPasswordScreen.routeName),
                         child: Text(
                           "Forgot Password",
                           style:

@@ -3,6 +3,7 @@ import 'package:repair_app/screens/add_car/add_car_screen.dart';
 import 'package:repair_app/screens/add_motobike/add_motobike_screen.dart';
 import 'package:repair_app/screens/add_vehicles/add_vehicle_screen.dart';
 import 'package:repair_app/screens/booking_form/booking_form_screen.dart';
+import 'package:repair_app/screens/forgot_password/forgot_password_screen.dart';
 import 'package:repair_app/screens/home/home_screen.dart';
 import 'package:repair_app/screens/login/login_screen.dart';
 import 'package:repair_app/screens/order_tracking/tracking_screen.dart';
@@ -32,5 +33,13 @@ final Map<String, WidgetBuilder> routes = {
   BookingFormScreen.routeName: (context) => BookingFormScreen(),
   SpinnerScreen.routeName: (context) => SpinnerScreen(),
   SuccessFindScreen.routeName: (context) => SuccessFindScreen(),
+<<<<<<< Updated upstream
   MapView.routeName: (context) => MapView(),
+=======
+<<<<<<< HEAD
+  ForgotPasswordScreen.routeName: (context) => ForgotPasswordScreen(),
+=======
+  MapView.routeName: (context) => MapView(),
+>>>>>>> 15d62e6ce1cd45441b2f8f02558617a61ed65af3
+>>>>>>> Stashed changes
 };
