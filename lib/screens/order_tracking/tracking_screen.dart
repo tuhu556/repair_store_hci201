@@ -555,9 +555,38 @@ class _MapViewState extends State<MapView> {
                     children: [
                       Align(
                         alignment: Alignment.centerLeft,
-                        child: Text("Your fixer is comming!", textAlign: TextAlign.left, style: TextStyle(fontSize: 20),),
+                        child: Container(
+                          margin: EdgeInsets.only(left: 20, top: 10, bottom: 18),
+                          child: Text("Your fixer is comming!", textAlign: TextAlign.left, style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold))
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(left: 20),
+                            child: Row(
+                              children: [
+                                Image.asset('assets/images/thosuaxe.png', height: 70,),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      child: Text("Hoàng Long", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                                      //margin: EdgeInsets.only(left: 10),
+                                    ),
+                                    Text("Mechanic"),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            child: Icon(Icons.local_phone, color: Color(0xFFFF8A00), size: 30,),
+                            margin: EdgeInsets.only(right: 20),
+                          )
+                        ],
                       )
-                      
                     ],
                   ),
                 ),
