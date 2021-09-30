@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:repair_app/contanst/color.dart';
 import 'package:repair_app/screens/home/home_screen.dart';
+import 'package:repair_app/screens/order/order_screen.dart';
 import 'package:repair_app/screens/profile/profile_screen.dart';
 import '../enum.dart';
 
@@ -53,14 +54,26 @@ class BottomNavBar extends StatelessWidget {
               Tooltip(
                 message: "Order",
                 child: IconButton(
-                  icon: SvgPicture.asset("assets/icons/shopping-list.svg"),
-                  onPressed: () {},
+                  icon: SvgPicture.asset(
+                    "assets/icons/shopping-list.svg",
+                    color: MenuState.order == selectedMenu
+                        ? AppColors.colorFF8C1A
+                        : inActiveIconColor,
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, OrderScreen.routeName);
+                  },
                 ),
               ),
               Tooltip(
                 message: "Notification",
                 child: IconButton(
-                  icon: SvgPicture.asset("assets/icons/bell2.svg"),
+                  icon: SvgPicture.asset(
+                    "assets/icons/bell2.svg",
+                    color: MenuState.notification== selectedMenu
+                        ? AppColors.colorFF8C1A
+                        : inActiveIconColor,
+                  ),
                   onPressed: () {},
                 ),
               ),
