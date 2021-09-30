@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:keyboard_dismisser/keyboard_dismisser.dart';
 import 'package:repair_app/components/rounded_button.dart';
 import 'package:repair_app/contanst/color.dart';
+import 'package:repair_app/screens/add_location/add_location_screen.dart';
 import 'package:repair_app/screens/home/home_screen.dart';
 import 'package:repair_app/screens/spinner_page/spinner_screen.dart';
 
@@ -47,7 +48,7 @@ class Body extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Center(
                   child: Column(
-                    children: [
+                    children: <Widget>[
                       SizedBox(
                         height: size.height * 0.01,
                       ),
@@ -228,7 +229,7 @@ class Body extends StatelessWidget {
                         press: () {
                           Navigator.pushNamed(
                             context,
-                            SpinnerScreen.routeName,
+                            AddLocationScreen.routeName,
                           );
                         },
                       ),

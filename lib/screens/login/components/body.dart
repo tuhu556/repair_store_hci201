@@ -53,6 +53,7 @@ class Body extends StatelessWidget {
                     children: [
                       RoundedInputField(
                         hintText: "Your Email",
+                        icon: Icons.email,
                         onChanged: (value) {},
                       ),
                       RoundedPasswordField(

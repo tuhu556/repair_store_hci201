@@ -17,14 +17,13 @@ class RoundedPasswordField extends StatelessWidget {
       child: TextFormField(
         onChanged: onChanged,
         cursorColor: kPrimaryColor,
+        obscureText: true,
         decoration: InputDecoration(
           icon: Icon(
             Icons.lock,
-            color: kPrimaryColor,
           ),
           suffixIcon: Icon(
             Icons.visibility,
-            color: kPrimaryColor,
           ),
           hintText: hintText,
           border: InputBorder.none,

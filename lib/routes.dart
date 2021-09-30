@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:repair_app/screens/add_car/add_car_screen.dart';
+import 'package:repair_app/screens/add_location/add_location_screen.dart';
 import 'package:repair_app/screens/add_motobike/add_motobike_screen.dart';
 import 'package:repair_app/screens/add_vehicles/add_vehicle_screen.dart';
 import 'package:repair_app/screens/booking_form/booking_form_screen.dart';
@@ -41,4 +42,5 @@ final Map<String, WidgetBuilder> routes = {
   EnterCodeScreen.routeName: (context) => EnterCodeScreen(),
   ChangePasswordScreeen.routeName: (context) => ChangePasswordScreeen(),
   ConfirmPasswordScreen.routeName: (context) => ConfirmPasswordScreen(),
+  AddLocationScreen.routeName: (context) => AddLocationScreen(),
 };
