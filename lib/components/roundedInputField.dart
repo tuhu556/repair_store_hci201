@@ -22,7 +22,6 @@ class RoundedInputField extends StatelessWidget {
         decoration: InputDecoration(
           icon: Icon(
             icon,
-            color: kPrimaryColor,
           ),
           hintText: hintText,
           border: InputBorder.none,

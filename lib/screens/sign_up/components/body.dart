@@ -4,7 +4,6 @@ import 'package:keyboard_dismisser/keyboard_dismisser.dart';
 import 'package:repair_app/components/roundedInputField.dart';
 import 'package:repair_app/components/rounded_button.dart';
 import 'package:repair_app/components/rounded_password_field.dart';
-import 'package:repair_app/components/social_card.dart';
 import 'package:repair_app/contanst/color.dart';
 import 'package:repair_app/screens/success_sign_up/success_sign_up_screen.dart';
 
@@ -37,15 +36,18 @@ class Body extends StatelessWidget {
                 ),
                 SizedBox(height: size.height * 0.05),
                 RoundedInputField(
+                  icon: Icons.email,
                   hintText: "Enter Your Email",
                   onChanged: (value) {},
                 ),
                 RoundedInputField(
+                  icon: Icons.phone_android,
                   hintText: "Enter Your Phone Number",
                   onChanged: (value) {},
                 ),
                 RoundedInputField(
                   hintText: "Enter Your Password",
+                  icon: Icons.lock,
                   onChanged: (value) {},
                 ),
                 RoundedPasswordField(
