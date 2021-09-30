@@ -544,9 +544,18 @@ class _MapViewState extends State<MapView> {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: Container(
+                  
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 7,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
                   ),
                   height: height * 0.4,
                   width: width,
@@ -556,7 +565,7 @@ class _MapViewState extends State<MapView> {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Container(
-                          margin: EdgeInsets.only(left: 20, top: 10, bottom: 18),
+                          margin: EdgeInsets.only(left: 20, top: 15, bottom: 15),
                           child: Text("Your fixer is comming!", textAlign: TextAlign.left, style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold))
                         ),
                       ),
@@ -567,14 +576,12 @@ class _MapViewState extends State<MapView> {
                             margin: EdgeInsets.only(left: 20),
                             child: Row(
                               children: [
-                                Image.asset('assets/images/thosuaxe.png', height: 70,),
+                                Container(margin: EdgeInsets.only(right: 20),child: Image.asset('assets/images/thosuaxe.png', height: 70,)),
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    Container(
-                                      child: Text("Hoàng Long", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                                      //margin: EdgeInsets.only(left: 10),
-                                    ),
+                                    Text("Hoàng Long", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                                    SizedBox(height: 5),
                                     Text("Mechanic"),
                                   ],
                                 ),
@@ -584,6 +591,33 @@ class _MapViewState extends State<MapView> {
                           Container(
                             child: Icon(Icons.local_phone, color: Color(0xFFFF8A00), size: 30,),
                             margin: EdgeInsets.only(right: 20),
+                          )
+                        ],
+                      ),
+                      Divider(
+                        color: Colors.black.withOpacity(0.3)
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                            Container(
+                              width: 33.0,
+                              height: 33.0,
+                              decoration: new BoxDecoration(
+                                color: Color(0xFFFFEAEA),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(Icons.location_on_outlined, color: Color(0xFFFF8A00), size: 20,),
+                            ),
+                            //Icon(Icons.location_on_outlined, color: Color(0xFFFF8A00), size: 30,),
+                          ],),
+                          Column(
+                            children: [
+                              Text("Booking Address")
+                            ],
                           )
                         ],
                       )
