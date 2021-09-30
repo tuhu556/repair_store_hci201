@@ -3,6 +3,9 @@ import 'package:repair_app/screens/add_car/add_car_screen.dart';
 import 'package:repair_app/screens/add_motobike/add_motobike_screen.dart';
 import 'package:repair_app/screens/add_vehicles/add_vehicle_screen.dart';
 import 'package:repair_app/screens/booking_form/booking_form_screen.dart';
+import 'package:repair_app/screens/forgot_password/change_password_screen.dart';
+import 'package:repair_app/screens/forgot_password/confirm_password_screen.dart';
+import 'package:repair_app/screens/forgot_password/enter_code_screen.dart';
 import 'package:repair_app/screens/forgot_password/forgot_password_screen.dart';
 import 'package:repair_app/screens/home/home_screen.dart';
 import 'package:repair_app/screens/login/login_screen.dart';
@@ -35,4 +38,7 @@ final Map<String, WidgetBuilder> routes = {
   SuccessFindScreen.routeName: (context) => SuccessFindScreen(),
   MapView.routeName: (context) => MapView(),
   ForgotPasswordScreen.routeName: (context) => ForgotPasswordScreen(),
+  EnterCodeScreen.routeName: (context) => EnterCodeScreen(),
+  ChangePasswordScreeen.routeName: (context) => ChangePasswordScreeen(),
+  ConfirmPasswordScreen.routeName: (context) => ConfirmPasswordScreen(),
 };

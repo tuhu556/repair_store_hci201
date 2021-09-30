@@ -3,17 +3,19 @@ import 'package:keyboard_dismisser/keyboard_dismisser.dart';
 import 'package:repair_app/components/roundedInputField.dart';
 import 'package:repair_app/components/rounded_button.dart';
 import 'package:repair_app/contanst/color.dart';
-import 'package:repair_app/screens/forgot_password/enter_code_screen.dart';
-import 'package:repair_app/screens/home/home_screen.dart';
+import 'package:repair_app/screens/forgot_password/change_password_screen.dart';
 
-class Body extends StatelessWidget {
-  const Body({Key? key}) : super(key: key);
-
+class EnterCodeScreen extends StatelessWidget {
+  static String routeName = "/enterCode";
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return KeyboardDismisser(
-      child: SingleChildScrollView(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Enter code"),
+        backgroundColor: AppColors.colorFF8C1A,
+      ),
+      body: KeyboardDismisser(
         child: SafeArea(
           child: Center(
             child: Column(
@@ -22,7 +24,7 @@ class Body extends StatelessWidget {
                   height: size.height * 0.05,
                 ),
                 Text(
-                  "Please enter your email and we will send \nyou a link to return to your account",
+                  "Please enter your code",
                   style: TextStyle(fontSize: 18),
                   textAlign: TextAlign.center,
                 ),
@@ -30,7 +32,7 @@ class Body extends StatelessWidget {
                   height: size.height * 0.1,
                 ),
                 RoundedInputField(
-                  hintText: "Enter your email",
+                  hintText: "Enter code",
                   onChanged: (value) {},
                 ),
                 SizedBox(
@@ -39,13 +41,22 @@ class Body extends StatelessWidget {
                 RoundedButton(
                   color: AppColors.colorFF8C1A,
                   textColor: Colors.white,
-                  text: "Send",
+                  text: "Confirm",
                   press: () {
                     Navigator.pushNamed(
                       context,
-                      EnterCodeScreen.routeName,
+                      ChangePasswordScreeen.routeName,
                     );
                   },
+                ),
+                SizedBox(
+                  height: size.height * 0.01,
+                ),
+                RoundedButton(
+                  color: AppColors.colorFF8C1A,
+                  textColor: Colors.white,
+                  text: "Re-send",
+                  press: () {},
                 ),
               ],
             ),
