@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:repair_app/dtos/garage.dart';
+import 'package:repair_app/screens/order/components/history_page.dart';
+import 'package:repair_app/screens/order/components/order_page.dart';
+
+
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -11,7 +16,7 @@ class Body extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(
             // leadingWidth: MediaQuery.of(context).size.width,
-            elevation: 0.5,
+            elevation: 0.5,// độ rộng của bóng kẻ ngang
             shadowColor: Colors.white,
             centerTitle: true,
             title: Text(
@@ -21,11 +26,17 @@ class Body extends StatelessWidget {
             toolbarHeight: 95,
             backgroundColor: Colors.white,
             bottom: const TabBar(
+              
               indicatorWeight: 1.5,
               indicatorColor: Colors.orange,
               labelColor: Colors.black,
+              unselectedLabelColor: Colors.grey,
+              unselectedLabelStyle: TextStyle(fontSize: 17),
+              
               labelStyle: TextStyle(
-                fontSize: 17.5,
+                
+                fontSize: 18,
+                fontWeight: FontWeight.w500
               ),
               tabs: [
                 Tab(text: "Current Order"),
@@ -37,8 +48,10 @@ class Body extends StatelessWidget {
           ),
           body: const TabBarView(
             children: [
-              Icon(Icons.directions_car),
-              Icon(Icons.directions_bike),
+
+              OrderPage(),
+
+              HistoryPage()
             ],
           ),
         ),
