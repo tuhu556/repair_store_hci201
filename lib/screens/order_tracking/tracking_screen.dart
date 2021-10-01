@@ -350,7 +350,11 @@ class _MapViewState extends State<MapView> {
                           ),
                         ],
                       ),
-                      child: Icon(Icons.arrow_back_ios_new, color: Colors.black, size: 23,),
+                      child: Icon(
+                        Icons.arrow_back_ios_new,
+                        color: Colors.black,
+                        size: 23,
+                      ),
                     ),
                     onTap: () {
                       Navigator.pop(context);
@@ -571,122 +575,161 @@ class _MapViewState extends State<MapView> {
                 ),
               ),
             ),
-            
+
             SafeArea(
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 7,
-                        offset: Offset(0, 3), // changes position of shadow
+                child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 2,
+                      blurRadius: 7,
+                      offset: Offset(0, 3), // changes position of shadow
+                    ),
+                  ],
+                ),
+                height: height * 0.4,
+                width: width,
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Container(
+                            margin:
+                                EdgeInsets.only(left: 20, top: 15, bottom: 15),
+                            child: Text("Your fixer is comming!",
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold))),
                       ),
-                    ],
-                  ),
-                  height: height * 0.4,
-                  width: width,
-                  child: SingleChildScrollView(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Container(
-                            margin: EdgeInsets.only(left: 20, top: 15, bottom: 15),
-                            child: Text("Your fixer is comming!", textAlign: TextAlign.left, style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold))
-                          ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              margin: EdgeInsets.only(left: 20),
-                              child: Row(
-                                children: [
-                                  Container(margin: EdgeInsets.only(right: 20),child: Image.asset('assets/images/thosuaxe.png', height: 70,)),
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text("Hoàng Long", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                                      SizedBox(height: 5),
-                                      Text("Mechanic"),
-                                    ],
-                                  ),
-                                ],
-                              ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(left: 20),
+                            child: Row(
+                              children: [
+                                Container(
+                                    margin: EdgeInsets.only(right: 20),
+                                    child: Image.asset(
+                                      'assets/images/thosuaxe.png',
+                                      height: 70,
+                                    )),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("Hoàng Long",
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold)),
+                                    SizedBox(height: 5),
+                                    Text("Mechanic"),
+                                  ],
+                                ),
+                              ],
                             ),
-                            Container(
-                              child: Icon(Icons.local_phone, color: Color(0xFFFF8A00), size: 30,),
-                              margin: EdgeInsets.only(right: 20, top: 20),
-                            )
+                          ),
+                          Container(
+                            child: Icon(
+                              Icons.local_phone,
+                              color: Color(0xFFFF8A00),
+                              size: 30,
+                            ),
+                            margin: EdgeInsets.only(right: 20, top: 20),
+                          )
+                        ],
+                      ),
+                      Divider(color: Colors.black.withOpacity(0.3)),
+                      Padding(
+                        padding: const EdgeInsets.all(14.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Container(
+                                  width: 33.0,
+                                  height: 33.0,
+                                  margin: EdgeInsets.only(right: 10),
+                                  decoration: new BoxDecoration(
+                                    color: Color(0xFFFFEAEA),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(
+                                    Icons.location_on_outlined,
+                                    color: Color(0xFFFF8A00),
+                                    size: 20,
+                                  ),
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Booking Address",
+                                      style:
+                                          TextStyle(color: Color(0xFF9D9D9D)),
+                                    ),
+                                    Text(
+                                        "123, Nguyễn Thị Minh Khai, Quận 1, Hồ Chí Minh"),
+                                  ],
+                                )
+                              ],
+                            ),
+                            SizedBox(height: 15),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Container(
+                                  width: 33.0,
+                                  height: 33.0,
+                                  margin: EdgeInsets.only(right: 10),
+                                  decoration: new BoxDecoration(
+                                    color: Color(0xFFFFEAEA),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(
+                                    Icons.access_time_outlined,
+                                    color: Color(0xFFFF8A00),
+                                    size: 20,
+                                  ),
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Time",
+                                      style:
+                                          TextStyle(color: Color(0xFF9D9D9D)),
+                                    ),
+                                    SizedBox(height: 5),
+                                    Text("03:00PM (Max 20 min)"),
+                                  ],
+                                )
+                              ],
+                            ),
                           ],
                         ),
-                        Divider(
-                          color: Colors.black.withOpacity(0.3)
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(14.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    width: 33.0,
-                                    height: 33.0,
-                                    margin: EdgeInsets.only(right: 10),
-                                    decoration: new BoxDecoration(
-                                      color: Color(0xFFFFEAEA),
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Icon(Icons.location_on_outlined, color: Color(0xFFFF8A00), size: 20,),
-                                  ),
-                                  Text("Booking Address", style: TextStyle(color: Color(0xFF9D9D9D)),),
-                                  Text("123, Nguyễn Thị Minh Khai, Phường Bến Thành,\n Quận 1, Hồ Chí Minh")
-                                ],
-                              ),
-                              SizedBox(height: 15),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    width: 33.0,
-                                    height: 33.0,
-                                    margin: EdgeInsets.only(right: 10),
-                                    decoration: new BoxDecoration(
-                                      color: Color(0xFFFFEAEA),
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Icon(Icons.access_time_outlined, color: Color(0xFFFF8A00), size: 20,),
-                                  ),
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text("Time", style: TextStyle(color: Color(0xFF9D9D9D)),),
-                                      SizedBox(height: 5),
-                                      Text("03:00PM (Max 20 min)"),
-                                    ],
-                                  )
-                              ],),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
+                      )
+                    ],
                   ),
                 ),
-              )
-            ),
+              ),
+            )),
           ],
         ),
       ),
