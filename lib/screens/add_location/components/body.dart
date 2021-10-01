@@ -72,6 +72,20 @@ class Body extends StatelessWidget {
                         ),
                         Container(
                           alignment: Alignment.topLeft,
+                          child: ButtonMini(
+                            text: "Detect my location",
+                            press: () {},
+                            icon: Icon(
+                              Icons.location_on,
+                              color: AppColors.colorFF8C1A,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: size.height * 0.02,
+                        ),
+                        Container(
+                          alignment: Alignment.topLeft,
                           child: Text(
                             "Save as",
                             textAlign: TextAlign.end,

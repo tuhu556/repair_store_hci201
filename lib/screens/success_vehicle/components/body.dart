@@ -22,10 +22,6 @@ class Body extends StatelessWidget {
               ),
               SizedBox(height: size.height * 0.05),
               Text(
-                "Congratulation",
-                style: TextStyle(fontSize: 20),
-              ),
-              Text(
                 "Your vehicle is added",
                 style: TextStyle(fontSize: 20),
               ),
