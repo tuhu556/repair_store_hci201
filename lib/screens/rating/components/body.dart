@@ -13,21 +13,21 @@ class Body extends StatelessWidget {
     return SafeArea(
       child: SingleChildScrollView(
         child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
+          width: size.width,
+          height: size.height,
           child: Stack(
             children: <Widget>[
               //bao quát tất cả
               Container(
                 //hình chữ nhật màu cam phía trên
-                height: MediaQuery.of(context).size.height / 3 + 15,
-                width: MediaQuery.of(context).size.width,
+                height: size.height / 3 + 15,
+                width: size.width,
                 child: Stack(
                   fit: StackFit.expand,
                   children: <Widget>[
                     Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height,
+                      width: size.width,
+                      height: size.height,
                       color: Colors.orange[100],
                     ),
                   ],
@@ -37,7 +37,7 @@ class Body extends StatelessWidget {
               Positioned(
                 //chữ congratulation
                 top: 50,
-                left: MediaQuery.of(context).size.width / 2 - 128,
+                left: size.width / 2 - 128,
                 child: Text(
                   'Rating & review your fixer',
                   textAlign: TextAlign.center,
@@ -53,12 +53,12 @@ class Body extends StatelessWidget {
                 //phần trắng phía dưới
 
                 //khoảng cách từ tren của phần màu cam
-                top: MediaQuery.of(context).size.height / 3 - 30,
+                top: size.height / 3 - 30,
 
                 child: Container(
                   //tất cả phần màu trắng ở dưới
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
+                  width: size.width,
+                  height: size.height,
                   decoration: BoxDecoration(
                     // bo tròn cạnh trên và để phông nền trắng
                     color: Colors.white,
@@ -135,7 +135,7 @@ class Body extends StatelessWidget {
               Positioned(
                 //ảnh thợ sửa chữa và tên thợ
 
-                top: MediaQuery.of(context).size.height / 3 - 120,
+                top: size.height / 3 - 120,
                 child: Padding(
                   //ảnh thợ sửa chữa và tên thợ
                   padding: EdgeInsets.symmetric(horizontal: 85),
@@ -143,8 +143,8 @@ class Body extends StatelessWidget {
                     //ảnh thợ sửa chữa và tên thợ
                     children: <Widget>[
                       Container(
-                        width: MediaQuery.of(context).size.width / 3 + 100,
-                        height: MediaQuery.of(context).size.height / 6 + 30,
+                        width: size.width / 3 + 100,
+                        height: size.height / 6 + 30,
 
                         // ảnh thợ sửa xe
                         child: Stack(

@@ -7,6 +7,7 @@ import 'package:repair_app/components/rounded_button.dart';
 import 'package:repair_app/contanst/color.dart';
 import 'package:repair_app/screens/booking_form/booking_form_screen.dart';
 import 'package:repair_app/screens/home/home_screen.dart';
+import 'package:repair_app/screens/order_tracking/tracking_screen.dart';
 import 'package:repair_app/screens/success_find/success_find_screen.dart';
 
 class SpinnerScreen extends StatefulWidget {
@@ -23,7 +24,7 @@ class _SpinnerScreenState extends State<SpinnerScreen> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (_) => SuccessFindScreen(),
+          builder: (_) => MapView(),
         ),
       );
     });
