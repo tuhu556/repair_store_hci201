@@ -123,7 +123,7 @@ class Body extends StatelessWidget {
                           textColor: Colors.white,
                           text: "Send",
                           press: () {
-                            Navigator.pushNamed(context, HomeScreen.routeName);
+                            showAlertDialog(context);
                           },
                         ),
                       ],
@@ -180,4 +180,37 @@ class Body extends StatelessWidget {
       ),
     );
   }
+}
+
+showAlertDialog(BuildContext context) {  
+  // Create button  
+  Widget okButton = FlatButton(  
+    child: Text("OK"),  
+    onPressed: () {  
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => HomeScreen(),
+        ),
+      );
+    },  
+  );  
+  
+  // Create AlertDialog  
+  AlertDialog alert = AlertDialog(
+    title: Text("Notification"),  
+    content: Text("Thank you for using our service. Have a nice day <3."),  
+    actions: [  
+      okButton,  
+    ],  
+  );  
+  
+  // show the dialog  
+  showDialog(  
+    context: context,  
+    barrierDismissible: false,
+    builder: (BuildContext context) {  
+      return alert;  
+    },  
+  );  
 }
