@@ -21,6 +21,8 @@ import 'package:repair_app/screens/success_login/success_login_screen.dart';
 import 'package:repair_app/screens/success_sign_up/success_sign_up_screen.dart';
 import 'package:repair_app/screens/success_vehicle/success_vehicle_screen.dart';
 
+import 'screens/order/order_screen.dart';
+
 final Map<String, WidgetBuilder> routes = {
   HomeScreen.routeName: (context) => HomeScreen(),
   ProfileScreen.routeName: (context) => ProfileScreen(),
@@ -43,4 +45,5 @@ final Map<String, WidgetBuilder> routes = {
   ChangePasswordScreeen.routeName: (context) => ChangePasswordScreeen(),
   ConfirmPasswordScreen.routeName: (context) => ConfirmPasswordScreen(),
   AddLocationScreen.routeName: (context) => AddLocationScreen(),
+  OrderScreen.routeName: (context) => OrderScreen(),
 };
