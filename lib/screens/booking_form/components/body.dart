@@ -145,6 +145,14 @@ class Body extends StatelessWidget {
                         height: size.height * 0.03,
                       ),
                       Padding(
+                        padding: EdgeInsets.only(left: 20),
+                        child: Text(
+                            "(Note) If you do not know which part of your vehicle is damaged, please ignore this field."),
+                      ),
+                      SizedBox(
+                        height: size.height * 0.01,
+                      ),
+                      Padding(
                         padding: EdgeInsets.symmetric(horizontal: 10),
                         child: Stack(
                           children: <Widget>[
@@ -193,8 +201,9 @@ class Body extends StatelessWidget {
                               borderSide: BorderSide.none,
                             ),
                             filled: true,
-                            hintText: 'Enter a description...',
-                            labelText: 'Description',
+                            hintText: 'Describe the problem of your vehicle...',
+                            labelText:
+                                'Describe the problem of your vehicle (*)',
                           ),
                           onChanged: (value) {},
                           maxLines: 5,

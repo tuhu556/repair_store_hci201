@@ -1,12 +1,30 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:repair_app/components/rounded_button.dart';
-import 'package:repair_app/contanst/color.dart';
 import 'package:repair_app/screens/order_tracking/tracking_screen.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
+
+  @override
+  _BodyState createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  @override
+  void initState() {
+    Timer(Duration(seconds: 4), () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => MapView(),
+        ),
+      );
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -108,7 +126,7 @@ class Body extends StatelessWidget {
                               width: 15,
                             ),
                             Text(
-                              "245 Vũ Tông Phan, Thanh Xuân, Hà Nội",
+                              "245 Nam kỳ khởi nghĩa, Phường Bến Thành, Quận 1",
                               style: TextStyle(
                                 fontSize: 13,
                               ),
@@ -136,7 +154,6 @@ class Body extends StatelessWidget {
                         SizedBox(
                           height: 12,
                         ),
-
                         SizedBox(
                           height: 10,
                         ),
@@ -161,16 +178,6 @@ class Body extends StatelessWidget {
                         ),
                         SizedBox(
                           height: 10,
-                        ),
-
-                        //Button Next
-                        RoundedButton(
-                          color: AppColors.colorFF8C1A,
-                          textColor: Colors.white,
-                          text: "Next",
-                          press: () {
-                            Navigator.pushNamed(context, MapView.routeName);
-                          },
                         ),
                       ],
                     ),
