@@ -54,6 +54,7 @@ class Body extends StatelessWidget {
                           height: size.height * 0.05,
                         ),
                         TextFormField(
+                          
                           decoration: InputDecoration(
                             suffixIcon: Icon(
                               Icons.location_on,
