@@ -63,7 +63,7 @@ class Body extends StatelessWidget {
                               borderSide: BorderSide.none,
                             ),
                             filled: true,
-                            labelText: 'Your Location',
+                            labelText: ' Đường D1, Khu Công Nghệ Cao, Long Thạnh Mỹ, Thành Phố Thủ Đức, Thành phố Hồ Chí Minh',
                           ),
                           onChanged: (value) {},
                         ),

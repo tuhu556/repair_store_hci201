@@ -118,6 +118,9 @@ class Body extends StatelessWidget {
                                   filled: true,
                                   hintText: 'Select your vehicle (*)',
                                   labelText: 'Select your vehicle (*)',
+                                  labelStyle: TextStyle(
+                                    color: Color(0XFFFF0000).withOpacity(0.5)
+                                  ),
                                 ),
                                 controller: vehicleSelected,
                               ),
@@ -144,7 +147,7 @@ class Body extends StatelessWidget {
                       SizedBox(
                         height: size.height * 0.03,
                       ),
-                      Padding(
+                      /* Padding(
                         padding: EdgeInsets.only(left: 20),
                         child: Text(
                             "(Note) If you do not know which part of your vehicle is damaged, please ignore this field."),
@@ -191,7 +194,7 @@ class Body extends StatelessWidget {
                       ),
                       SizedBox(
                         height: size.height * 0.03,
-                      ),
+                      ), */
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 10),
                         child: TextFormField(
@@ -202,8 +205,10 @@ class Body extends StatelessWidget {
                             ),
                             filled: true,
                             hintText: 'Describe the problem of your vehicle...',
-                            labelText:
-                                'Describe the problem of your vehicle (*)',
+                            labelText: "Describe the problem of your vehicle? (*)",
+                            labelStyle: TextStyle(
+                              color: Color(0XFFFF0000).withOpacity(0.5)
+                            ),
                           ),
                           onChanged: (value) {},
                           maxLines: 5,
