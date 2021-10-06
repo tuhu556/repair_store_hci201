@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:repair_app/screens/rating/components/body.dart';
+import 'package:repair_app/screens/receipt/components/body.dart';
 
-class RatingScreen extends StatelessWidget {
-  static String routeName = "/rating";
+class ReceiptScreen extends StatelessWidget {
+  static String routeName = "/receipt";
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -9,6 +9,7 @@ import 'package:repair_app/screens/home/home_screen.dart';
 import 'dart:math' show cos, sqrt, asin;
 
 import 'package:repair_app/screens/rating/rating_screen.dart';
+import 'package:repair_app/screens/receipt/receipt_screen.dart';
 
 class MapView extends StatefulWidget {
   static String routeName = "/mapView";
@@ -91,7 +92,7 @@ class _MapViewState extends State<MapView> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (_) => RatingScreen(),
+          builder: (_) => ReceiptScreen(),
         ),
       );
     });
