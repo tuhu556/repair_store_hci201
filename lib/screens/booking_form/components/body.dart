@@ -217,25 +217,6 @@ class Body extends StatelessWidget {
                       SizedBox(
                         height: size.height * 0.04,
                       ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15),
-                              borderSide: BorderSide.none,
-                            ),
-                            filled: true,
-                            hintText: 'Enter a Note...',
-                            labelText: 'Note',
-                          ),
-                          onChanged: (value) {},
-                          maxLines: 5,
-                        ),
-                      ),
-                      SizedBox(
-                        height: size.height * 0.04,
-                      ),
                       RoundedButton(
                         color: AppColors.colorFF8C1A,
                         textColor: Colors.white,
