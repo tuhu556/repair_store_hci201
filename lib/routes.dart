@@ -4,12 +4,14 @@ import 'package:repair_app/screens/add_location/add_location_screen.dart';
 import 'package:repair_app/screens/add_motobike/add_motobike_screen.dart';
 import 'package:repair_app/screens/add_vehicles/add_vehicle_screen.dart';
 import 'package:repair_app/screens/booking_form/booking_form_screen.dart';
+import 'package:repair_app/screens/cancel_booking/cancel_booking_screen.dart';
 import 'package:repair_app/screens/forgot_password/change_password_screen.dart';
 import 'package:repair_app/screens/forgot_password/confirm_password_screen.dart';
 import 'package:repair_app/screens/forgot_password/enter_code_screen.dart';
 import 'package:repair_app/screens/forgot_password/forgot_password_screen.dart';
 import 'package:repair_app/screens/home/home_screen.dart';
 import 'package:repair_app/screens/login/login_screen.dart';
+import 'package:repair_app/screens/notification/notification_screen.dart';
 import 'package:repair_app/screens/order_tracking/tracking_screen.dart';
 import 'package:repair_app/screens/profile/profile_screen.dart';
 import 'package:repair_app/screens/rating/rating_screen.dart';
@@ -18,6 +20,7 @@ import 'package:repair_app/screens/sign_in_up/sign_in_up_screen.dart';
 import 'package:repair_app/screens/sign_up/sign_up_screen.dart';
 import 'package:repair_app/screens/spinner_page/spinner_screen.dart';
 import 'package:repair_app/screens/splash/splash_screen.dart';
+import 'package:repair_app/screens/success_canceled/success_cancel_screen.dart';
 import 'package:repair_app/screens/success_find/success_find_screen.dart';
 import 'package:repair_app/screens/success_login/success_login_screen.dart';
 import 'package:repair_app/screens/success_sign_up/success_sign_up_screen.dart';
@@ -50,4 +53,7 @@ final Map<String, WidgetBuilder> routes = {
   OrderScreen.routeName: (context) => OrderScreen(),
   ReceiptScreen.routeName: (context) => ReceiptScreen(),
   RatingScreen.routeName: (context) => RatingScreen(),
+  NotificationScreen.routeName: (context) => NotificationScreen(),
+  CancelBookingScreen.routeName: (context) => CancelBookingScreen(),
+  SuccessCancelScreen.routeName: (context) => SuccessCancelScreen(),
 };

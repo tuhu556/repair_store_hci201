@@ -1,14 +1,44 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:keyboard_dismisser/keyboard_dismisser.dart';
+import 'package:multi_select_flutter/chip_display/multi_select_chip_display.dart';
+import 'package:multi_select_flutter/multi_select_flutter.dart';
 import 'package:repair_app/components/rounded_button.dart';
 import 'package:repair_app/contanst/color.dart';
 import 'package:repair_app/screens/add_location/add_location_screen.dart';
+import 'package:repair_app/screens/booking_form/data/problem.dart';
 import 'package:repair_app/screens/home/home_screen.dart';
 import 'package:repair_app/screens/spinner_page/spinner_screen.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
+
+  @override
+  State<Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  bool showTextbox = false;
+  static List<Problem> _problems = [
+    Problem(id: 1, str: "I can't start the vehicle"),
+    Problem(id: 2, str: "The tires have problems"),
+    Problem(id: 3, str: "I need an oil change"),
+    Problem(id: 4, str: "My vehicle is out of gas"),
+    Problem(id: 5, str: "The blinker has problem"),
+    Problem(id: 6, str: "The windscreen is broken"),
+    Problem(id: 7, str: "Vehicle's brakes have problems"),
+    Problem(id: 8, str: "Other"),
+  ];
+  final _items = _problems
+      .map((problem) => MultiSelectItem<Problem>(problem, problem.str))
+      .toList();
+  List<Problem> _selectedProblem = [];
+  final _multiSelectKey = GlobalKey<FormFieldState>();
+  @override
+  void initState() {
+    _selectedProblem = _problems;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -147,56 +177,62 @@ class Body extends StatelessWidget {
                       SizedBox(
                         height: size.height * 0.03,
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 20),
-                        child: Text(
-                            "(Note) If you do not know which part of your vehicle is damaged, please ignore this field."),
-                      ),
-                      SizedBox(
-                        height: size.height * 0.01,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: Stack(
-                          children: <Widget>[
-                            Container(
-                              child: TextFormField(
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                    borderSide: BorderSide.none,
-                                  ),
-                                  filled: true,
-                                  hintText: "Your problem vehicle's part",
-                                  labelText: "Your problem vehicle's part",
-                                ),
-                                controller: serviceSelected,
-                              ),
-                            ),
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: PopupMenuButton<String>(
-                                icon: const Icon(Icons.arrow_drop_down),
-                                onSelected: (String value) {
-                                  serviceSelected.text = value;
-                                },
-                                itemBuilder: (BuildContext context) {
-                                  return services.map<PopupMenuItem<String>>(
-                                      (String value) {
-                                    return new PopupMenuItem(
-                                        child: new Text(value), value: value);
-                                  }).toList();
-                                },
-                              ),
-                            ),
-                          ],
+                      MultiSelectChipField(
+                        items: _items,
+                        initialValue: [],
+                        scroll: false,
+                        title: Text("What's your problems? (*)"),
+                        headerColor: Colors.orange.withOpacity(0.5),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              color: (Colors.orange[700])!, width: 1.8),
                         ),
+                        selectedChipColor: Colors.orange.withOpacity(0.5),
+                        selectedTextStyle: TextStyle(color: Colors.orange[800]),
+                        onTap: (values) {
+                          setState(() {
+                            _selectedProblem = List<Problem>.from(values);
+                            bool found = false;
+                            for (Problem item in _selectedProblem) {
+                              if (item.str == "Other") {
+                                found = true;
+                              }
+                            }
+                            if (found == true) {
+                              showTextbox = true;
+                            } else {
+                              showTextbox = false;
+                            }
+                          });
+                        },
+                      ),
+
+                      SizedBox(
+                        height: size.height * 0.03,
+                      ),
+                      Visibility(
+                        child: Container(
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15),
+                                borderSide: BorderSide.none,
+                              ),
+                              filled: true,
+                              hintText: 'Other Problem',
+                              labelText: 'Other Problem',
+                              labelStyle: TextStyle(
+                                  color: Color(0XFFFF0000).withOpacity(0.5)),
+                            ),
+                            controller: vehicleSelected,
+                          ),
+                        ),
+                        visible: showTextbox,
                       ),
                       SizedBox(
                         height: size.height * 0.03,
                       ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
+                      Container(
                         child: TextFormField(
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
@@ -204,16 +240,72 @@ class Body extends StatelessWidget {
                               borderSide: BorderSide.none,
                             ),
                             filled: true,
-                            hintText: 'Describe the problem of your vehicle...',
-                            labelText:
-                                "Describe the problem of your vehicle? (*)",
-                            labelStyle: TextStyle(
-                                color: Color(0XFFFF0000).withOpacity(0.5)),
+                            hintText:
+                                'Anything else you want to let your fixer know?',
+                            labelText: 'Note',
                           ),
-                          onChanged: (value) {},
-                          maxLines: 5,
+                          controller: vehicleSelected,
                         ),
                       ),
+                      // Padding(
+                      //   padding: EdgeInsets.symmetric(horizontal: 10),
+                      //   child: Stack(
+                      //     children: <Widget>[
+                      //       Container(
+                      //         child: TextFormField(
+                      //           decoration: InputDecoration(
+                      //             border: OutlineInputBorder(
+                      //               borderRadius: BorderRadius.circular(15),
+                      //               borderSide: BorderSide.none,
+                      //             ),
+                      //             filled: true,
+                      //             hintText: "Your problem vehicle's part",
+                      //             labelText: "Your problem vehicle's part",
+                      //           ),
+                      //           controller: serviceSelected,
+                      //         ),
+                      //       ),
+                      //       Align(
+                      //         alignment: Alignment.centerRight,
+                      //         child: PopupMenuButton<String>(
+                      //           icon: const Icon(Icons.arrow_drop_down),
+                      //           onSelected: (String value) {
+                      //             serviceSelected.text = value;
+                      //           },
+                      //           itemBuilder: (BuildContext context) {
+                      //             return services.map<PopupMenuItem<String>>(
+                      //                 (String value) {
+                      //               return new PopupMenuItem(
+                      //                   child: new Text(value), value: value);
+                      //             }).toList();
+                      //           },
+                      //         ),
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
+                      SizedBox(
+                        height: size.height * 0.03,
+                      ),
+                      // Padding(
+                      //   padding: EdgeInsets.symmetric(horizontal: 10),
+                      //   child: TextFormField(
+                      //     decoration: InputDecoration(
+                      //       border: OutlineInputBorder(
+                      //         borderRadius: BorderRadius.circular(15),
+                      //         borderSide: BorderSide.none,
+                      //       ),
+                      //       filled: true,
+                      //       hintText: 'Describe the problem of your vehicle...',
+                      //       labelText:
+                      //           "Describe the problem of your vehicle? (*)",
+                      //       labelStyle: TextStyle(
+                      //           color: Color(0XFFFF0000).withOpacity(0.5)),
+                      //     ),
+                      //     onChanged: (value) {},
+                      //     maxLines: 5,
+                      //   ),
+                      // ),
                       SizedBox(
                         height: size.height * 0.04,
                       ),

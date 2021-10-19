@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:repair_app/contanst/color.dart';
 import 'package:repair_app/screens/home/home_screen.dart';
+import 'package:repair_app/screens/notification/notification_screen.dart';
 import 'package:repair_app/screens/order/order_screen.dart';
 import 'package:repair_app/screens/profile/profile_screen.dart';
 import '../enum.dart';
@@ -70,11 +71,12 @@ class BottomNavBar extends StatelessWidget {
                 child: IconButton(
                   icon: SvgPicture.asset(
                     "assets/icons/bell2.svg",
-                    color: MenuState.notification== selectedMenu
+                    color: MenuState.notification == selectedMenu
                         ? AppColors.colorFF8C1A
                         : inActiveIconColor,
                   ),
-                  onPressed: () {},
+                  onPressed: () => Navigator.pushNamed(
+                      context, NotificationScreen.routeName),
                 ),
               ),
               Tooltip(

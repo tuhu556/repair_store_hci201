@@ -39,7 +39,7 @@ class OrderPage extends StatelessWidget {
                 ],
               )
             ],
-          )
+          ),
         ],
       ),
     );
