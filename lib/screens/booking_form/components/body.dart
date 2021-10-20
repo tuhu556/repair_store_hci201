@@ -7,8 +7,8 @@ import 'package:repair_app/components/rounded_button.dart';
 import 'package:repair_app/contanst/color.dart';
 import 'package:repair_app/screens/add_location/add_location_screen.dart';
 import 'package:repair_app/screens/booking_form/data/problem.dart';
+import 'package:repair_app/screens/booking_form/data/vehicle.dart';
 import 'package:repair_app/screens/home/home_screen.dart';
-import 'package:repair_app/screens/spinner_page/spinner_screen.dart';
 
 class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
@@ -20,20 +20,26 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   bool showTextbox = false;
   static List<Problem> _problems = [
-    Problem(id: 1, str: "I can't start the vehicle"),
-    Problem(id: 2, str: "The tires have problems"),
-    Problem(id: 3, str: "I need an oil change"),
-    Problem(id: 4, str: "My vehicle is out of gas"),
-    Problem(id: 5, str: "The blinker has problem"),
-    Problem(id: 6, str: "The windscreen is broken"),
-    Problem(id: 7, str: "Vehicle's brakes have problems"),
-    Problem(id: 8, str: "Other"),
+    Problem(id: 1, str: "Other"),
+    Problem(id: 2, str: "I can't start the vehicle"),
+    Problem(id: 3, str: "The tires have problems"),
+    Problem(id: 4, str: "I need an oil change"),
+    Problem(id: 5, str: "My vehicle is out of gas"),
+    Problem(id: 6, str: "The blinker has problem"),
+    Problem(id: 7, str: "The windscreen is broken"),
+    Problem(id: 8, str: "Vehicle's brakes have problems"),
+    Problem(id: 9, str: "The Steering Wheel is Shaking"),
+    Problem(id: 10, str: "The Sensors Are Malfunctioning"),
   ];
+
   final _items = _problems
       .map((problem) => MultiSelectItem<Problem>(problem, problem.str))
       .toList();
+
   List<Problem> _selectedProblem = [];
+
   final _multiSelectKey = GlobalKey<FormFieldState>();
+
   @override
   void initState() {
     _selectedProblem = _problems;
@@ -177,19 +183,43 @@ class _BodyState extends State<Body> {
                       SizedBox(
                         height: size.height * 0.03,
                       ),
-                      MultiSelectChipField(
+                      // MultiSelectChipField(
+                      //   items: _items,
+                      //   initialValue: [],
+                      //   scroll: false,
+                      //   title: Text("What's your problems? (*)"),
+                      //   headerColor: Colors.orange.withOpacity(0.5),
+                      //   decoration: BoxDecoration(
+                      //     border: Border.all(
+                      //         color: (Colors.orange[700])!, width: 1.8),
+                      //   ),
+                      //   selectedChipColor: Colors.orange.withOpacity(0.5),
+                      //   selectedTextStyle: TextStyle(color: Colors.orange[800]),
+                      //   onTap: (values) {
+                      //     setState(() {
+                      //       _selectedProblem = List<Problem>.from(values);
+                      //       bool found = false;
+                      //       for (Problem item in _selectedProblem) {
+                      //         if (item.str == "Other") {
+                      //           found = true;
+                      //         }
+                      //       }
+                      //       if (found == true) {
+                      //         showTextbox = true;
+                      //       } else {
+                      //         showTextbox = false;
+                      //       }
+                      //     });
+                      //   },
+                      // ),
+                      MultiSelectBottomSheetField(
+                        initialChildSize: 0.4,
+                        listType: MultiSelectListType.CHIP,
+                        searchable: true,
+                        buttonText: Text("What's your problems?"),
+                        title: Text("Problems"),
                         items: _items,
-                        initialValue: [],
-                        scroll: false,
-                        title: Text("What's your problems? (*)"),
-                        headerColor: Colors.orange.withOpacity(0.5),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                              color: (Colors.orange[700])!, width: 1.8),
-                        ),
-                        selectedChipColor: Colors.orange.withOpacity(0.5),
-                        selectedTextStyle: TextStyle(color: Colors.orange[800]),
-                        onTap: (values) {
+                        onConfirm: (values) {
                           setState(() {
                             _selectedProblem = List<Problem>.from(values);
                             bool found = false;
@@ -205,8 +235,23 @@ class _BodyState extends State<Body> {
                             }
                           });
                         },
+                        chipDisplay: MultiSelectChipDisplay(
+                          onTap: (value) {
+                            setState(() {
+                              _selectedProblem.remove(value);
+                            });
+                          },
+                        ),
                       ),
-
+                      _selectedProblem == null || _selectedProblem.isEmpty
+                          ? Container(
+                              padding: EdgeInsets.all(10),
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                "None selected",
+                                style: TextStyle(color: Colors.black54),
+                              ))
+                          : Container(),
                       SizedBox(
                         height: size.height * 0.03,
                       ),
