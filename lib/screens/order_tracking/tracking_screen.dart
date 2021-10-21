@@ -167,7 +167,7 @@ class _MapViewState extends State<MapView> {
             DraggableScrollableSheet(
               initialChildSize: 0.4,
               minChildSize: 0.2,
-              maxChildSize: 0.5,
+              maxChildSize: 0.55,
               builder:
                   (BuildContext context, ScrollController scrollController) {
                 return SingleChildScrollView(
@@ -187,7 +187,7 @@ class _MapViewState extends State<MapView> {
                         ),
                       ],
                     ),
-                    height: height * 0.5,
+                    height: height * 0.55,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,

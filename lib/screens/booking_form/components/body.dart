@@ -58,7 +58,7 @@ class _BodyState extends State<Body> {
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Container(
             padding: EdgeInsets.only(
-                top: 40.0, left: 30.0, right: 30.0, bottom: 25.0),
+                top: 5.0, left: 30.0, right: 30.0, bottom: 5.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
@@ -90,15 +90,13 @@ class _BodyState extends State<Body> {
                   child: Column(
                     children: <Widget>[
                       SizedBox(
-                        height: size.height * 0.01,
+                        height: 50,
                       ),
                       // Text(
                       //   "What's your vehicle's problem ?",
                       //   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                       // ),
-                      SizedBox(
-                        height: size.height * 0.2,
-                      ),
+                      Image.asset("assets/images/vehicle_repair_1.png", height: 150,),
                       // Row(
                       //   mainAxisAlignment: MainAxisAlignment.center,
                       //   children: [
@@ -238,6 +236,9 @@ class _BodyState extends State<Body> {
                       // SizedBox(
                       //   height: size.height * 0.03,
                       // ),
+                      SizedBox(
+                        height: size.height * 0.05,
+                      ),
                       DropdownSearch<String>(
                         mode: Mode.MENU,
                         items: vehicles,
@@ -305,7 +306,7 @@ class _BodyState extends State<Body> {
                       //   ),
                       // ),
                       SizedBox(
-                        height: size.height * 0.2,
+                        height: size.height * 0.05,
                       ),
                       // Padding(
                       //   padding: EdgeInsets.symmetric(horizontal: 10),
@@ -326,9 +327,6 @@ class _BodyState extends State<Body> {
                       //     maxLines: 5,
                       //   ),
                       // ),
-                      SizedBox(
-                        height: size.height * 0.04,
-                      ),
                       RoundedButton(
                         color: AppColors.colorFF8C1A,
                         textColor: Colors.white,
@@ -358,8 +356,8 @@ class _BodyState extends State<Body> {
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(40.0),
-                  topRight: Radius.circular(40.0),
+                  topLeft: Radius.circular(20.0),
+                  topRight: Radius.circular(20.0),
                 ),
               ),
             ),

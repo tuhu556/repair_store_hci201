@@ -39,7 +39,7 @@ class Body extends StatelessWidget {
                 Positioned(
                   //chữ congratulation
                   top: 50,
-                  left: size.width / 2 - 128,
+                  left: size.width / 2 - 140,
                   child: Text(
                     'Rating & review your fixer',
                     textAlign: TextAlign.center,

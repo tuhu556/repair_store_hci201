@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:repair_app/routes.dart';
 import 'package:repair_app/screens/splash/splash_screen.dart';
 
@@ -13,7 +14,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Repair-Booking-App',
-      theme: ThemeData(fontFamily: 'Poppins'),
+      theme: ThemeData(textTheme: GoogleFonts.poppinsTextTheme(
+        Theme.of(context).textTheme,
+      ),),
       initialRoute: SplashScreen.routeName,
       routes: routes,
     );

@@ -11,7 +11,7 @@ class Helpers {
 
   void hideKeyboard(BuildContext context) {
     FocusScope.of(context).unfocus();
-  }
+  }  
 
   void showDialogProgress(BuildContext context) {
     if (!_isDialogLoading) {

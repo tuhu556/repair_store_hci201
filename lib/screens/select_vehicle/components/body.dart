@@ -16,7 +16,7 @@ class Body extends StatelessWidget {
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Container(
             padding: EdgeInsets.only(
-                top: 40.0, left: 30.0, right: 30.0, bottom: 25.0),
+                top: 5.0, left: 30.0, right: 30.0, bottom: 5.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
@@ -48,7 +48,11 @@ class Body extends StatelessWidget {
                   child: Column(
                     children: <Widget>[
                       SizedBox(
-                        height: size.height * 0.1,
+                        height: 50,
+                      ),
+                      Image.asset("assets/images/vehicle_repair.png", height: 150,),
+                      SizedBox(
+                        height: size.height * 0.05,
                       ),
                       DropdownSearch<String>(
                         mode: Mode.DIALOG,
@@ -58,7 +62,7 @@ class Body extends StatelessWidget {
                         onChanged: print,
                       ),
                       SizedBox(
-                        height: size.height * 0.35,
+                        height: size.height * 0.05,
                       ),
                       RoundedButton(
                         color: AppColors.colorFF8C1A,
@@ -82,8 +86,8 @@ class Body extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(40.0),
-                  topRight: Radius.circular(40.0),
+                  topLeft: Radius.circular(20.0),
+                  topRight: Radius.circular(20.0),
                 ),
               ),
             ),

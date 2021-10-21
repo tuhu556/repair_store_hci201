@@ -55,8 +55,8 @@ class _BodyState extends State<Body> {
 
               Positioned(
                 //chữ congratulation
-                top: 50,
-                left: MediaQuery.of(context).size.width / 2 - 128,
+                top: 20,
+                left: MediaQuery.of(context).size.width / 2 - 145,
                 child: Text(
                   'Congratulation!\nWe have found your fixer',
                   textAlign: TextAlign.center,
@@ -72,7 +72,7 @@ class _BodyState extends State<Body> {
                 //phần trắng phía dưới
 
                 //khoảng cách từ tren của phần màu cam
-                top: MediaQuery.of(context).size.height / 3 - 30,
+                top: MediaQuery.of(context).size.height / 3 - 50,
 
                 child: Container(
                   //tất cả phần màu trắng ở dưới
@@ -160,7 +160,7 @@ class _BodyState extends State<Body> {
                         Row(
                           children: <Widget>[
                             Text(
-                              "Work at: Hoàng Việt Motorbike repair shop",
+                              "Work at: Hoàng Việt Motorbike repair\nshop",
                               style: TextStyle(
                                 fontSize: 18,
                               ),
