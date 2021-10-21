@@ -10,6 +10,7 @@ import 'package:repair_app/helper/helper.dart';
 import 'package:repair_app/screens/add_car/add_car_screen.dart';
 import 'package:repair_app/screens/add_motobike/add_motobike_screen.dart';
 import 'package:repair_app/screens/booking_form/booking_form_screen.dart';
+import 'package:repair_app/screens/select_vehicle/select_vehicle_screen.dart';
 
 import '../../enum.dart';
 
@@ -85,7 +86,7 @@ class HomeScreen extends StatelessWidget {
                             onTap: () {
                               Navigator.pushNamed(
                                 context,
-                                BookingFormScreen.routeName,
+                                SelectVehicleScreen.routeName,
                               );
                             },
                           ),

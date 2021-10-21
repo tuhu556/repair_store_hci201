@@ -38,6 +38,7 @@ dependencies:
   geocoding: ^2.0.0
   flutter_polyline_points: ^1.0.0
   multi_select_flutter: ^4.0.0
+  dropdown_search: ^1.0.4
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -10,8 +10,6 @@ import 'package:repair_app/screens/add_location/add_location_screen.dart';
 import 'package:repair_app/screens/booking_form/data/problem.dart';
 import 'package:repair_app/screens/booking_form/data/vehicle.dart';
 import 'package:repair_app/screens/home/home_screen.dart';
-import 'package:repair_app/screens/maintain_vehicle/maintain_vehicle_screen.dart';
-import 'package:repair_app/screens/repair_vehicle/repair_vehicle_screen.dart';
 
 class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
@@ -73,7 +71,7 @@ class _BodyState extends State<Body> {
                   },
                 ),
                 Text(
-                  'Booking form',
+                  'Maintain',
                   style: TextStyle(
                     color: Color(0xFFFF8C1A),
                     fontSize: 24.0,
@@ -90,60 +88,57 @@ class _BodyState extends State<Body> {
                   child: Column(
                     children: <Widget>[
                       SizedBox(
-                        height: size.height * 0.01,
+                        height: size.height * 0.03,
                       ),
                       // Text(
                       //   "What's your vehicle's problem ?",
                       //   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                       // ),
-                      SizedBox(
-                        height: size.height * 0.2,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          GestureDetector(
+                            child: Column(
+                              children: [
+                                Image.asset("assets/images/camera.png"),
+                                SizedBox(
+                                  height: 8,
+                                ),
+                                Text("Upload Picture")
+                              ],
+                            ),
+                            onTap: () {
+                              Navigator.pushNamed(
+                                context,
+                                HomeScreen.routeName,
+                              );
+                            },
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          GestureDetector(
+                            child: Column(
+                              children: [
+                                Image.asset("assets/images/video.png"),
+                                SizedBox(
+                                  height: 8,
+                                ),
+                                Text("Upload Video")
+                              ],
+                            ),
+                            onTap: () {
+                              Navigator.pushNamed(
+                                context,
+                                HomeScreen.routeName,
+                              );
+                            },
+                          ),
+                        ],
                       ),
-                      // Row(
-                      //   mainAxisAlignment: MainAxisAlignment.center,
-                      //   children: [
-                      //     GestureDetector(
-                      //       child: Column(
-                      //         children: [
-                      //           Image.asset("assets/images/camera.png"),
-                      //           SizedBox(
-                      //             height: 8,
-                      //           ),
-                      //           Text("Upload Picture")
-                      //         ],
-                      //       ),
-                      //       onTap: () {
-                      //         Navigator.pushNamed(
-                      //           context,
-                      //           HomeScreen.routeName,
-                      //         );
-                      //       },
-                      //     ),
-                      //     SizedBox(
-                      //       width: 10,
-                      //     ),
-                      //     GestureDetector(
-                      //       child: Column(
-                      //         children: [
-                      //           Image.asset("assets/images/video.png"),
-                      //           SizedBox(
-                      //             height: 8,
-                      //           ),
-                      //           Text("Upload Video")
-                      //         ],
-                      //       ),
-                      //       onTap: () {
-                      //         Navigator.pushNamed(
-                      //           context,
-                      //           HomeScreen.routeName,
-                      //         );
-                      //       },
-                      //     ),
-                      //   ],
-                      // ),
-                      // SizedBox(
-                      //   height: size.height * 0.05,
-                      // ),
+                      SizedBox(
+                        height: size.height * 0.05,
+                      ),
                       // MultiSelectChipField(
                       //   items: _items,
                       //   initialValue: [],
@@ -173,85 +168,75 @@ class _BodyState extends State<Body> {
                       //     });
                       //   },
                       // ),
-                      // MultiSelectBottomSheetField(
-                      //   initialChildSize: 0.4,
-                      //   listType: MultiSelectListType.CHIP,
-                      //   searchable: true,
-                      //   buttonText: Text("What's your problems?"),
-                      //   title: Text("Problems"),
-                      //   items: _items,
-                      //   onConfirm: (values) {
-                      //     setState(() {
-                      //       _selectedProblem = List<Problem>.from(values);
-                      //       bool found = false;
-                      //       for (Problem item in _selectedProblem) {
-                      //         if (item.str == "Other") {
-                      //           found = true;
-                      //         }
-                      //       }
-                      //       if (found == true) {
-                      //         showTextbox = true;
-                      //       } else {
-                      //         showTextbox = false;
-                      //       }
-                      //     });
-                      //   },
-                      //   chipDisplay: MultiSelectChipDisplay(
-                      //     onTap: (value) {
-                      //       setState(() {
-                      //         _selectedProblem.remove(value);
-                      //       });
-                      //     },
-                      //   ),
-                      // ),
-                      // _selectedProblem == null || _selectedProblem.isEmpty
-                      //     ? Container(
-                      //         padding: EdgeInsets.all(10),
-                      //         alignment: Alignment.centerLeft,
-                      //         child: Text(
-                      //           "None selected",
-                      //           style: TextStyle(color: Colors.black54),
-                      //         ))
-                      //     : Container(),
-                      // SizedBox(
-                      //   height: size.height * 0.03,
-                      // ),
-                      // Visibility(
-                      //   child: Container(
-                      //     child: TextFormField(
-                      //       decoration: InputDecoration(
-                      //         border: OutlineInputBorder(
-                      //           borderRadius: BorderRadius.circular(15),
-                      //           borderSide: BorderSide.none,
-                      //         ),
-                      //         filled: true,
-                      //         hintText: 'Other Problem',
-                      //         labelText: 'Other Problem',
-                      //         labelStyle: TextStyle(
-                      //             color: Color(0XFFFF0000).withOpacity(0.5)),
-                      //       ),
-                      //       controller: vehicleSelected,
-                      //     ),
-                      //   ),
-                      //   visible: showTextbox,
-                      // ),
-                      // SizedBox(
-                      //   height: size.height * 0.03,
-                      // ),
-                      DropdownSearch<String>(
-                        mode: Mode.MENU,
-                        items: vehicles,
-                        label: "Do you want to maintain or repair ?",
-                        onChanged: (text) {
-                          if (text == "I would like to maintain") {
-                            selection = 1;
-                            print(selection);
-                          } else if (text == "I would like to repair") {
-                            selection = 2;
-                            print(selection);
-                          }
+                      MultiSelectBottomSheetField(
+                        initialChildSize: 0.4,
+                        listType: MultiSelectListType.CHIP,
+                        searchable: true,
+                        buttonText: Text("What do you need?"),
+                        title: Text("Problems"),
+                        items: _items,
+                        onConfirm: (values) {
+                          setState(() {
+                            _selectedProblem = List<Problem>.from(values);
+                            bool found = false;
+                            for (Problem item in _selectedProblem) {
+                              if (item.str == "Other") {
+                                found = true;
+                              }
+                            }
+                            if (found == true) {
+                              showTextbox = true;
+                            } else {
+                              showTextbox = false;
+                            }
+                          });
                         },
+                        chipDisplay: MultiSelectChipDisplay(
+                          onTap: (value) {
+                            setState(() {
+                              _selectedProblem.remove(value);
+                            });
+                          },
+                        ),
                       ),
+                      _selectedProblem == null || _selectedProblem.isEmpty
+                          ? Container(
+                              padding: EdgeInsets.all(10),
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                "None selected",
+                                style: TextStyle(color: Colors.black54),
+                              ))
+                          : Container(),
+                      SizedBox(
+                        height: size.height * 0.03,
+                      ),
+                      Visibility(
+                        child: Container(
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15),
+                                borderSide: BorderSide.none,
+                              ),
+                              filled: true,
+                              hintText: 'Other Problem',
+                              labelText: 'Other Problem',
+                              labelStyle: TextStyle(
+                                  color: Color(0XFFFF0000).withOpacity(0.5)),
+                            ),
+                            controller: vehicleSelected,
+                          ),
+                        ),
+                        visible: showTextbox,
+                      ),
+
+                      // DropdownSearch<String>(
+                      //   mode: Mode.MENU,
+                      //   items: vehicles,
+                      //   label: "How long had your vehicle's problems appear?",
+                      //   onChanged: (text) {},
+                      // ),
                       // Container(
                       //   child: TextFormField(
                       //     decoration: InputDecoration(
@@ -304,9 +289,7 @@ class _BodyState extends State<Body> {
                       //     ],
                       //   ),
                       // ),
-                      SizedBox(
-                        height: size.height * 0.2,
-                      ),
+
                       // Padding(
                       //   padding: EdgeInsets.symmetric(horizontal: 10),
                       //   child: TextFormField(
@@ -332,19 +315,12 @@ class _BodyState extends State<Body> {
                       RoundedButton(
                         color: AppColors.colorFF8C1A,
                         textColor: Colors.white,
-                        text: "Next",
+                        text: "Submit",
                         press: () {
-                          if (selection == 1) {
-                            Navigator.pushNamed(
-                              context,
-                              MaintainScreen.routeName,
-                            );
-                          } else if (selection == 2) {
-                            Navigator.pushNamed(
-                              context,
-                              RepairScreen.routeName,
-                            );
-                          }
+                          Navigator.pushNamed(
+                            context,
+                            AddLocationScreen.routeName,
+                          );
                         },
                       ),
                       SizedBox(
@@ -373,14 +349,16 @@ class _BodyState extends State<Body> {
 final vehicleSelected = TextEditingController();
 final serviceSelected = TextEditingController();
 var services = [
+  'I have no idea',
   'Brake System',
   'Cooling System',
   'Engine System',
   'Fuel System',
-  'Other...',
-  'I have no idea',
 ];
 var vehicles = [
-  'I would like to maintain',
-  'I would like to repair',
+  'I do not know',
+  'today',
+  '1 week',
+  '1 month',
+  '1 year',
 ];

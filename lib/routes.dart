@@ -11,11 +11,14 @@ import 'package:repair_app/screens/forgot_password/enter_code_screen.dart';
 import 'package:repair_app/screens/forgot_password/forgot_password_screen.dart';
 import 'package:repair_app/screens/home/home_screen.dart';
 import 'package:repair_app/screens/login/login_screen.dart';
+import 'package:repair_app/screens/maintain_vehicle/maintain_vehicle_screen.dart';
 import 'package:repair_app/screens/notification/notification_screen.dart';
 import 'package:repair_app/screens/order_tracking/tracking_screen.dart';
 import 'package:repair_app/screens/profile/profile_screen.dart';
 import 'package:repair_app/screens/rating/rating_screen.dart';
 import 'package:repair_app/screens/receipt/receipt_screen.dart';
+import 'package:repair_app/screens/repair_vehicle/repair_vehicle_screen.dart';
+import 'package:repair_app/screens/select_vehicle/select_vehicle_screen.dart';
 import 'package:repair_app/screens/sign_in_up/sign_in_up_screen.dart';
 import 'package:repair_app/screens/sign_up/sign_up_screen.dart';
 import 'package:repair_app/screens/spinner_page/spinner_screen.dart';
@@ -56,4 +59,7 @@ final Map<String, WidgetBuilder> routes = {
   NotificationScreen.routeName: (context) => NotificationScreen(),
   CancelBookingScreen.routeName: (context) => CancelBookingScreen(),
   SuccessCancelScreen.routeName: (context) => SuccessCancelScreen(),
+  SelectVehicleScreen.routeName: (context) => SelectVehicleScreen(),
+  RepairScreen.routeName: (context) => RepairScreen(),
+  MaintainScreen.routeName: (context) => MaintainScreen(),
 };
