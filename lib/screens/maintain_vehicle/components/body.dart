@@ -23,13 +23,12 @@ class _BodyState extends State<Body> {
   int selection = 0;
   static List<Problem> _problems = [
     Problem(id: 1, str: "Other"),
-    Problem(id: 2, str: "I can't start the vehicle"),
-    Problem(id: 3, str: "The tires have problems"),
-    Problem(id: 4, str: "I need an oil change"),
+    Problem(id: 2, str: "I need to check all my vehilce"),
+    Problem(id: 3, str: "I need to check air filter"),
+    Problem(id: 4, str: "I need to check spark plugs"),
     Problem(id: 5, str: "My vehicle is out of gas"),
-    Problem(id: 6, str: "The blinker has problem"),
-    Problem(id: 7, str: "The windscreen is broken"),
-    Problem(id: 8, str: "Vehicle's brakes have problems"),
+    Problem(id: 6, str: "Vehicle transmission maintenance"),
+    Problem(id: 7, str: "Maintenance and change of vehicle coolant"),
     Problem(id: 9, str: "The Steering Wheel is Shaking"),
     Problem(id: 10, str: "The Sensors Are Malfunctioning"),
   ];
@@ -55,8 +54,8 @@ class _BodyState extends State<Body> {
       child: SafeArea(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Container(
-            padding: EdgeInsets.only(
-                top: 5.0, left: 30.0, right: 30.0, bottom: 5.0),
+            padding:
+                EdgeInsets.only(top: 5.0, left: 30.0, right: 30.0, bottom: 5.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
@@ -172,7 +171,7 @@ class _BodyState extends State<Body> {
                         initialChildSize: 0.4,
                         listType: MultiSelectListType.CHIP,
                         searchable: true,
-                        buttonText: Text("What do you need?"),
+                        buttonText: Text("What do you need?(*)"),
                         title: Text("Problems"),
                         items: _items,
                         onConfirm: (values) {
@@ -309,6 +308,14 @@ class _BodyState extends State<Body> {
                       //     maxLines: 5,
                       //   ),
                       // ),
+                      DropdownSearch<String>(
+                        mode: Mode.DIALOG,
+                        items: vehicles,
+                        label:
+                            "When was the last time you maintain your vehicle?",
+                        dropdownSearchBaseStyle: TextStyle(fontSize: 13),
+                        onChanged: (text) {},
+                      ),
                       SizedBox(
                         height: size.height * 0.04,
                       ),
@@ -356,9 +363,8 @@ var services = [
   'Fuel System',
 ];
 var vehicles = [
-  'I do not know',
-  'today',
-  '1 week',
-  '1 month',
-  '1 year',
+  "I don't remember",
+  '1 week ago',
+  '1 month ago',
+  '1 year ago',
 ];

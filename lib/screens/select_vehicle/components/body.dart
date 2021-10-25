@@ -15,8 +15,8 @@ class Body extends StatelessWidget {
       child: SafeArea(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Container(
-            padding: EdgeInsets.only(
-                top: 5.0, left: 30.0, right: 30.0, bottom: 5.0),
+            padding:
+                EdgeInsets.only(top: 5.0, left: 30.0, right: 30.0, bottom: 5.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
@@ -50,7 +50,10 @@ class Body extends StatelessWidget {
                       SizedBox(
                         height: 50,
                       ),
-                      Image.asset("assets/images/vehicle_repair.png", height: 150,),
+                      Image.asset(
+                        "assets/images/vehicle_repair.png",
+                        height: 150,
+                      ),
                       SizedBox(
                         height: size.height * 0.05,
                       ),
@@ -101,5 +104,5 @@ class Body extends StatelessWidget {
 final vehicleSelected = TextEditingController();
 var vehicles = [
   'Honda Vision',
-  'SUV',
+  'VinFast VF e34',
 ];

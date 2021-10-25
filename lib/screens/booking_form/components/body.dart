@@ -57,8 +57,8 @@ class _BodyState extends State<Body> {
       child: SafeArea(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Container(
-            padding: EdgeInsets.only(
-                top: 5.0, left: 30.0, right: 30.0, bottom: 5.0),
+            padding:
+                EdgeInsets.only(top: 5.0, left: 30.0, right: 30.0, bottom: 5.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
@@ -73,7 +73,7 @@ class _BodyState extends State<Body> {
                   },
                 ),
                 Text(
-                  'Booking form',
+                  'Select your Service',
                   style: TextStyle(
                     color: Color(0xFFFF8C1A),
                     fontSize: 24.0,
@@ -96,7 +96,10 @@ class _BodyState extends State<Body> {
                       //   "What's your vehicle's problem ?",
                       //   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                       // ),
-                      Image.asset("assets/images/vehicle_repair_1.png", height: 150,),
+                      Image.asset(
+                        "assets/images/vehicle_repair_1.png",
+                        height: 150,
+                      ),
                       // Row(
                       //   mainAxisAlignment: MainAxisAlignment.center,
                       //   children: [

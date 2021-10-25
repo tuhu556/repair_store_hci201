@@ -93,7 +93,7 @@ class _BodyState extends State<Body> {
 
                       children: <Widget>[
                         SizedBox(
-                          height: 120,
+                          height: 130,
                         ),
                         RatingBar.builder(
                           itemSize: 25,

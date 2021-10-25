@@ -55,8 +55,8 @@ class _BodyState extends State<Body> {
       child: SafeArea(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Container(
-            padding: EdgeInsets.only(
-                top: 5.0, left: 30.0, right: 30.0, bottom: 5.0),
+            padding:
+                EdgeInsets.only(top: 5.0, left: 30.0, right: 30.0, bottom: 5.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
@@ -172,7 +172,7 @@ class _BodyState extends State<Body> {
                         initialChildSize: 0.4,
                         listType: MultiSelectListType.CHIP,
                         searchable: true,
-                        buttonText: Text("What's your problems?"),
+                        buttonText: Text("What's your vehicle problems? (*)"),
                         title: Text("Problems"),
                         items: _items,
                         onConfirm: (values) {
@@ -233,19 +233,21 @@ class _BodyState extends State<Body> {
                       SizedBox(
                         height: size.height * 0.03,
                       ),
-                      DropdownSearch.multiSelection(
-                        mode: Mode.DIALOG,
-                        items: services,
-                        label: "Do you know which vehicle part has problem?",
-                      ),
-                      SizedBox(
-                        height: size.height * 0.02,
-                      ),
+                      // DropdownSearch.multiSelection(
+                      //   mode: Mode.DIALOG,
+                      //   items: services,
+                      //   label: "Do you know which vehicle part has problem?",
+                      //   dropdownSearchBaseStyle: TextStyle(fontSize: 13),
+                      // ),
+                      // SizedBox(
+                      //   height: size.height * 0.02,
+                      // ),
 
                       DropdownSearch<String>(
                         mode: Mode.DIALOG,
                         items: vehicles,
                         label: "How long had your vehicle's problems appear?",
+                        dropdownSearchBaseStyle: TextStyle(fontSize: 13),
                         onChanged: (text) {},
                       ),
 
@@ -370,7 +372,8 @@ var services = [
 var vehicles = [
   'I do not know',
   'today',
-  '1 week',
-  '1 month',
-  '1 year',
+  'yesterday',
+  '1 week ago',
+  '1 month ago',
+  '1 year ago',
 ];

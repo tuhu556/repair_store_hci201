@@ -64,13 +64,8 @@ class Body extends StatelessWidget {
                                     borderSide: BorderSide.none,
                                   ),
                                   filled: true,
-                                  hintText:
-                                      'Reason for Booking cancellation (*) ',
-                                  labelText:
-                                      'Reason for Booking cancellation (*)',
-                                  labelStyle: TextStyle(
-                                      color:
-                                          Color(0XFFFF0000).withOpacity(0.5)),
+                                  hintText: 'Reason for Booking cancellation',
+                                  labelText: 'Reason for Booking cancellation',
                                 ),
                                 controller: vehicleSelected,
                               ),

@@ -290,7 +290,7 @@ class _MapViewState extends State<MapView> {
                                       ),
                                       SizedBox(height: 5),
                                       Text(
-                                          "Đường D1, Khu Công Nghệ Cao, Long Thạnh Mỹ, \nThành Phố Thủ Đức"),
+                                          "Đường D1, Khu Công Nghệ Cao, \nLong Thạnh Mỹ, Thành Phố Thủ Đức"),
                                     ],
                                   )
                                 ],
@@ -319,12 +319,12 @@ class _MapViewState extends State<MapView> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "Time",
+                                        "Time Booking",
                                         style:
                                             TextStyle(color: Color(0xFF9D9D9D)),
                                       ),
                                       SizedBox(height: 5),
-                                      Text("03:00PM (Max 20 min)"),
+                                      Text("03:00PM"),
                                     ],
                                   )
                                 ],
